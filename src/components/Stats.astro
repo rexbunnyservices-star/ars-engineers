@@ -8,6 +8,7 @@ const stats = [
 ---
 
 <section class="section section--dark section--stats" data-num="">
+  <div class="stats__stripe"></div>
   <div class="container">
     <div class="stats__grid" data-reveal>
       {stats.map((s) => (
@@ -23,6 +24,25 @@ const stats = [
 <style>
   .section--stats {
     padding: var(--sp-12) 0;
+    position: relative;
+    overflow: hidden;
+    background: #080c12;
+  }
+
+  .stats__stripe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: repeating-linear-gradient(
+      90deg,
+      var(--accent) 0px,
+      var(--accent) 20px,
+      transparent 20px,
+      transparent 30px
+    );
+    opacity: 0.6;
   }
 
   .stats__grid {

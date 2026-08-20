@@ -18,6 +18,22 @@
   .cta-band {
     background: var(--grad);
     padding: var(--sp-10) 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-band::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent 0px,
+      transparent 14px,
+      rgba(0,0,0,0.06) 14px,
+      rgba(0,0,0,0.06) 28px
+    );
+    pointer-events: none;
   }
 
   .cta-band__inner {

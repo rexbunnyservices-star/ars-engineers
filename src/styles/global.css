@@ -1,13 +1,13 @@
 /* ═══════════════════════════════════════════════════════════
    ARS Engineers & Technology — Design System
-   Light industrial theme · Orange accent · Clean B2B
+   Industrial dark theme · Construction orange · Heavy machinery
    ═══════════════════════════════════════════════════════════ */
 
 /* ── Reset & Base ──────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
-  scroll-behavior: auto; /* Lenis handles smooth scroll */
+  scroll-behavior: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -30,40 +30,40 @@ input, textarea, select { font: inherit; color: inherit; }
 
 /* ── Design Tokens ─────────────────────────────────────── */
 :root {
-  /* Canvas */
-  --bg: #fafaf8;
-  --bg-card: #ffffff;
-  --bg-subtle: #f3f2ef;
-  --bg-dark: #1a1a1a;
+  /* Canvas — dark steel / slate */
+  --bg: #0c1017;
+  --bg-card: #141c27;
+  --bg-subtle: #111820;
+  --bg-dark: #080c12;
 
   /* Text */
-  --ink: #1a1a1a;
-  --body: #4a4a4a;
-  --muted: #8a8a8a;
+  --ink: #f0f2f5;
+  --body: #a8b4c2;
+  --muted: #5a6978;
   --white: #ffffff;
 
-  /* Accent */
-  --accent: #e85d04;
-  --accent-hover: #d45303;
-  --accent-light: #fff4ed;
-  --accent-glow: rgba(232, 93, 4, 0.15);
+  /* Accent — construction orange (Caterpillar / heavy equipment) */
+  --accent: #ff6b00;
+  --accent-hover: #e85f00;
+  --accent-light: rgba(255, 107, 0, 0.10);
+  --accent-glow: rgba(255, 107, 0, 0.20);
 
   /* Semantic */
-  --success: #16a34a;
-  --danger: #dc2626;
+  --success: #22c55e;
+  --danger: #ef4444;
   --warning: #f59e0b;
 
   /* Surfaces */
-  --border: #e5e4e0;
-  --border-accent: rgba(232, 93, 4, 0.3);
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
-  --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
-  --shadow-lg: 0 8px 32px rgba(0,0,0,0.1);
-  --shadow-accent: 0 4px 24px rgba(232, 93, 4, 0.18);
+  --border: rgba(255, 255, 255, 0.06);
+  --border-accent: rgba(255, 107, 0, 0.35);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.5);
+  --shadow-accent: 0 4px 24px rgba(255, 107, 0, 0.25);
 
   /* Gradient */
-  --grad: linear-gradient(135deg, #e85d04, #fb923c);
-  --grad-dark: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+  --grad: linear-gradient(135deg, #ff6b00, #ff9a3c);
+  --grad-dark: linear-gradient(135deg, #0c1017, #1a2332);
 
   /* Typography */
   --fs-hero: clamp(2.4rem, 5.5vw, 4.2rem);
@@ -127,7 +127,7 @@ input, textarea, select { font: inherit; color: inherit; }
 }
 
 .section--dark .section__title { color: var(--white); }
-.section--dark .section__subtitle { color: rgba(255,255,255,0.7); }
+.section--dark .section__subtitle { color: rgba(255,255,255,0.5); }
 
 .section__head {
   text-align: center;
@@ -178,14 +178,14 @@ input, textarea, select { font: inherit; color: inherit; }
   right: var(--sp-4);
   font-size: clamp(4rem, 10vw, 8rem);
   font-weight: 900;
-  color: rgba(0,0,0,0.03);
+  color: rgba(255,255,255,0.02);
   line-height: 1;
   pointer-events: none;
   z-index: 0;
 }
 
 .section--dark[data-num]::before {
-  color: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.03);
 }
 
 /* ── Grid ──────────────────────────────────────────────── */
@@ -264,7 +264,7 @@ input, textarea, select { font: inherit; color: inherit; }
 .card__link:hover { gap: 10px; }
 
 .card__link::after {
-  content: '→';
+  content: '\2192';
   transition: transform var(--duration) var(--ease);
 }
 
@@ -297,14 +297,14 @@ input, textarea, select { font: inherit; color: inherit; }
 }
 
 .btn--outline {
-  border: 2px solid var(--ink);
+  border: 2px solid rgba(255,255,255,0.25);
   color: var(--ink);
   background: transparent;
 }
 
 .btn--outline:hover {
-  background: var(--ink);
-  color: var(--white);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.4);
 }
 
 .btn--ghost {
@@ -318,13 +318,13 @@ input, textarea, select { font: inherit; color: inherit; }
 
 .btn--white {
   background: var(--white);
-  color: var(--accent);
+  color: #0c1017;
 }
 
 .btn--white:hover {
   background: rgba(255,255,255,0.9);
   transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgba(255,255,255,0.2);
+  box-shadow: 0 4px 20px rgba(255,255,255,0.15);
 }
 
 .btn--sm {
@@ -367,10 +367,10 @@ input, textarea, select { font: inherit; color: inherit; }
 }
 
 .nav.scrolled {
-  background: rgba(250, 250, 248, 0.88);
+  background: rgba(12, 16, 23, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 1px 12px rgba(0,0,0,0.06);
+  box-shadow: 0 1px 12px rgba(0,0,0,0.4);
 }
 
 .nav__inner {
@@ -512,8 +512,8 @@ input, textarea, select { font: inherit; color: inherit; }
 .form-select {
   width: 100%;
   padding: 12px 16px;
-  background: var(--bg);
-  border: 1.5px solid var(--border);
+  background: rgba(255,255,255,0.04);
+  border: 1.5px solid rgba(255,255,255,0.08);
   border-radius: var(--radius-sm);
   font-size: var(--fs-body);
   color: var(--ink);
@@ -539,14 +539,27 @@ input, textarea, select { font: inherit; color: inherit; }
   resize: vertical;
 }
 
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235a6978' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+.form-select option {
+  background: var(--bg-card);
+  color: var(--ink);
+}
+
 /* ── Badge / Chip ──────────────────────────────────────── */
 .badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   padding: 8px 16px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 100px;
   font-size: var(--fs-xs);
   font-weight: 600;
@@ -555,7 +568,7 @@ input, textarea, select { font: inherit; color: inherit; }
 
 .badge--accent {
   background: var(--accent-light);
-  border-color: var(--accent-glow);
+  border-color: var(--border-accent);
   color: var(--accent);
 }
 
@@ -587,6 +600,7 @@ input, textarea, select { font: inherit; color: inherit; }
 .product-hero {
   padding: calc(var(--nav-height) + var(--sp-10)) 0 var(--sp-8);
   background: var(--bg-subtle);
+  border-bottom: 1px solid var(--border);
 }
 
 .product-hero__breadcrumb {
@@ -649,7 +663,7 @@ input, textarea, select { font: inherit; color: inherit; }
   font-weight: 600;
   color: var(--ink);
   width: 40%;
-  background: var(--bg-subtle);
+  background: rgba(255,255,255,0.02);
   border-right: 1px solid var(--border);
 }
 

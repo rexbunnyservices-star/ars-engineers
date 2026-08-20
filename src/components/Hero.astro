@@ -1,6 +1,6 @@
 ---
 ---
-<section class="section" id="home">
+<section class="section hero-section" id="home">
   <div class="container hero__inner">
     <div class="hero__content" data-reveal>
       <div class="hero__badges">
@@ -41,6 +41,33 @@
 </section>
 
 <style>
+  section.hero-section {
+    background: linear-gradient(170deg, #0c1017 0%, #111820 40%, #0c1017 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  section.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,107,0,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  section.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,107,0,0.2), transparent);
+  }
+
   .hero__inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -66,11 +93,12 @@
   .hero__title::after {
     content: '';
     display: block;
-    width: 64px;
-    height: 4px;
-    background: var(--grad);
-    border-radius: 2px;
+    width: 80px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 1px;
     margin-top: var(--sp-3);
+    box-shadow: 0 0 12px rgba(255,107,0,0.4);
   }
 
   .hero__text {
@@ -108,12 +136,12 @@
     padding: var(--sp-4);
     box-shadow: var(--shadow-md);
   }
-  .hero__card--main { top: 0; right: 0; width: 320px; }
+  .hero__card--main { top: 0; right: 0; width: 320px; border-top: 3px solid var(--accent); }
   .hero__card--main h3 { font-size: var(--fs-h3); font-weight: 700; color: var(--ink); margin-bottom: var(--sp-1); }
   .hero__card--main p { font-size: var(--fs-small); color: var(--body); }
   .hero__card--secondary { bottom: 60px; left: 0; display: flex; align-items: center; gap: var(--sp-2); padding: 14px 20px; }
   .hero__card--secondary span { font-size: var(--fs-small); font-weight: 600; color: var(--ink); }
-  .hero__card--accent { bottom: 0; right: 40px; background: var(--accent); border-color: var(--accent); display: flex; align-items: center; gap: var(--sp-2); padding: 14px 20px; }
+  .hero__card--accent { bottom: 0; right: 40px; background: var(--accent); border-color: var(--accent); display: flex; align-items: center; gap: var(--sp-2); padding: 14px 20px; box-shadow: 0 4px 24px rgba(255,107,0,0.3); }
   .hero__card--accent span { font-size: var(--fs-small); font-weight: 600; color: #fff; }
 
   .hero__card-icon { width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; background: var(--accent-light); border-radius: var(--radius-sm); color: var(--accent); font-size: 1.6rem; margin-bottom: var(--sp-3); }
