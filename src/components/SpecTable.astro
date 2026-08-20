@@ -1,0 +1,49 @@
+---
+interface Spec {
+  label: string;
+  value: string;
+}
+
+interface Props {
+  specs: Spec[];
+}
+
+const { specs } = Astro.props;
+---
+
+<div class="spec-box" data-reveal>
+  <h3 class="spec-box__title"><i class="ri-list-check-2"></i> Technical Specifications</h3>
+  <table class="spec-table">
+    {specs.map((s) => (
+      <tr>
+        <td>{s.label}</td>
+        <td>{s.value}</td>
+      </tr>
+    ))}
+  </table>
+</div>
+
+<style>
+  .spec-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .spec-box__title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--fs-h3);
+    font-weight: 700;
+    color: var(--ink);
+    padding: var(--sp-4) var(--sp-5);
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-subtle);
+  }
+
+  .spec-box__title i {
+    color: var(--accent);
+  }
+</style>

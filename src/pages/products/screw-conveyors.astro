@@ -1,0 +1,101 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SpecTable from '../../components/SpecTable.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const title = 'Screw Conveyors | ARS Engineers & Technology';
+const desc = 'Inclined & vertical screw conveyors for bulk material transport. SS304 and SS316 models. Manufactured in New Delhi.';
+
+const variants = [
+  { name: 'Inclined Screw Conveyor', specs: [
+    { label: 'Type', value: 'Inclined Screw' },
+    { label: 'Capacity', value: '10 TPH' },
+    { label: 'Conveyor Length', value: '3 m – 12 m' },
+    { label: 'Inclination Angle', value: '15° – 45°' },
+    { label: 'Screw Diameter', value: '200 mm – 400 mm' },
+    { label: 'Motor Power', value: '3 HP – 10 HP' },
+    { label: 'Material', value: 'SS304 Stainless Steel' },
+    { label: 'Application', value: 'Cement, fly ash, grain, fertilizer handling' },
+  ]},
+  { name: 'Vertical Screw Conveyor (SS)', specs: [
+    { label: 'Type', value: 'Vertical Screw' },
+    { label: 'Height', value: 'Up to 15 m' },
+    { label: 'Screw Diameter', value: '200 mm – 300 mm' },
+    { label: 'Motor Power', value: '5 HP – 15 HP' },
+    { label: 'Material', value: 'SS316 Stainless Steel' },
+    { label: 'Surface Finish', value: 'Mirror Polish / Matte' },
+    { label: 'Application', value: 'Food processing, pharma, chemical industries' },
+    { label: 'Speed', value: '300 – 600 RPM' },
+  ]},
+];
+
+const related = [
+  { name: 'Belt Conveyors', desc: 'Flat, troughed & inclined belt conveyors for continuous material handling.', price: 'From ₹25,000', icon: 'ri-arrow-right-line', href: '/products/belt-conveyors' },
+  { name: 'Coal Crushers', desc: 'Specialized single-roll crushers designed for coal processing.', price: 'From ₹1.5 Lakh', icon: 'ri-fire-line', href: '/products/coal-crushers' },
+  { name: 'Vibrating Screens', desc: 'Multi-deck screens for efficient material classification and sizing.', price: 'From ₹1 Lakh', icon: 'ri-layout-grid-line', href: '/products/vibrating-screens' },
+];
+---
+
+<Layout title={title} description={desc}>
+  <section class="product-hero">
+    <div class="container">
+      <p class="product-hero__breadcrumb">
+        <a href="/">Home</a> / <a href="/#products">Products</a> / Screw Conveyors
+      </p>
+      <h1 class="product-hero__title">Screw Conveyors</h1>
+      <p class="product-hero__desc">
+        ARS Engineers manufactures precision screw conveyors for efficient bulk material transport in horizontal, inclined, and vertical configurations. Our conveyors are built with high-grade stainless steel (SS304/SS316) for corrosion resistance and hygiene-critical applications.
+      </p>
+      <p class="product-hero__desc">
+        Whether you need to move cement, fly ash, grain, chemicals, or food products, our screw conveyors deliver consistent flow rates with minimal maintenance. Available in customizable lengths up to 15 m with variable speed drives.
+      </p>
+      <div class="product-hero__actions">
+        <a href="/#contact" class="btn btn--primary"><i class="ri-chat-3-line"></i> Get a Quote</a>
+        <a href="/#products" class="btn btn--outline">View All Products</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {variants.map((v) => (
+        <div style="margin-bottom: var(--sp-6);">
+          <h2 style="font-size: var(--fs-h3); font-weight: 700; color: var(--ink); margin-bottom: var(--sp-2);">{v.name}</h2>
+          <SpecTable specs={v.specs} />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section section--subtle">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__label">Related Products</span>
+        <h2 class="section__title">You May Also Need</h2>
+      </div>
+      <div style="display:grid; grid-template-columns: repeat(3,1fr); gap: var(--sp-4);">
+        {related.map((p) => <ProductCard {...p} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band__inner">
+        <div>
+          <h2 class="cta-band__title">Need a Screw Conveyor Solution?</h2>
+          <p class="cta-band__text">We design custom configurations for your specific material and layout.</p>
+        </div>
+        <a href="/#contact" class="btn btn--white"><i class="ri-chat-3-line"></i> Get Free Quote</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .cta-band { background: var(--grad); padding: var(--sp-10) 0; }
+  .cta-band__inner { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-6); flex-wrap: wrap; }
+  .cta-band__title { font-size: var(--fs-h2); font-weight: 800; color: #fff; margin-bottom: var(--sp-1); }
+  .cta-band__text { font-size: var(--fs-body); color: rgba(255,255,255,0.85); }
+  @media (max-width: 720px) { .cta-band__inner { flex-direction: column; text-align: center; } [style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; } }
+</style>

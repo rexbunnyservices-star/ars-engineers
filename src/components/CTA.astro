@@ -1,0 +1,54 @@
+---
+---
+<section class="section cta-band">
+  <div class="container" data-reveal>
+    <div class="cta-band__inner">
+      <div class="cta-band__content">
+        <h2 class="cta-band__title">Ready to Upgrade Your Crushing Setup?</h2>
+        <p class="cta-band__text">Get a free consultation with our engineering team. We'll help you find the perfect solution for your operations.</p>
+      </div>
+      <a href="/#contact" class="btn btn--white btn--sm">
+        <i class="ri-chat-3-line"></i> Get Free Quote
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-band {
+    background: var(--grad);
+    padding: var(--sp-10) 0;
+  }
+
+  .cta-band__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sp-6);
+    flex-wrap: wrap;
+  }
+
+  .cta-band__title {
+    font-size: var(--fs-h2);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: var(--sp-1);
+  }
+
+  .cta-band__text {
+    font-size: var(--fs-body);
+    color: rgba(255,255,255,0.85);
+    max-width: 480px;
+  }
+
+  @media (max-width: 720px) {
+    .cta-band__inner {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .cta-band__text {
+      margin: 0 auto;
+    }
+  }
+</style>

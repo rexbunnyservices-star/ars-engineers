@@ -1,0 +1,133 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__logo">
+          <svg width="28" height="28" viewBox="0 0 64 64" fill="none">
+            <rect width="64" height="64" rx="12" fill="#2d2d2d"/>
+            <text x="8" y="44" font-family="Inter,sans-serif" font-weight="800" font-size="30" fill="#fff">ARS</text>
+            <circle cx="54" cy="16" r="6" fill="none" stroke="#e85d04" stroke-width="2"/>
+            <circle cx="54" cy="16" r="2" fill="#e85d04"/>
+          </svg>
+          <span>ARS Engineers</span>
+        </div>
+        <p class="footer__tagline">Precision Engineering<br/>Since 2014</p>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Quick Links</h4>
+        <a href="/" class="footer__link">Home</a>
+        <a href="/#about" class="footer__link">About Us</a>
+        <a href="/#products" class="footer__link">Products</a>
+        <a href="/#contact" class="footer__link">Contact</a>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Products</h4>
+        <a href="/products/belt-conveyors" class="footer__link">Belt Conveyors</a>
+        <a href="/products/jaw-crushers" class="footer__link">Jaw Crushers</a>
+        <a href="/products/vibrating-screens" class="footer__link">Vibrating Screens</a>
+        <a href="/products/crushing-plants" class="footer__link">Crushing Plants</a>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Contact</h4>
+        <p class="footer__text">I.P. Extension, New Delhi</p>
+        <p class="footer__text">Delhi, India</p>
+        <a href="mailto:info@arsengineers.in" class="footer__link">info@arsengineers.in</a>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; {year} ARS Engineers & Technology. All rights reserved.</p>
+      <p>GST Registered &middot; Payment: Cash, Card, Cheque, Online</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--bg-dark);
+    color: rgba(255,255,255,0.6);
+    padding: var(--sp-10) 0 var(--sp-4);
+  }
+
+  .footer__grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: var(--sp-8);
+    margin-bottom: var(--sp-8);
+  }
+
+  .footer__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: var(--sp-2);
+  }
+
+  .footer__tagline {
+    font-size: var(--fs-small);
+    line-height: 1.6;
+  }
+
+  .footer__heading {
+    font-size: var(--fs-small);
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: var(--sp-3);
+  }
+
+  .footer__link {
+    display: block;
+    font-size: var(--fs-small);
+    color: rgba(255,255,255,0.5);
+    padding: 4px 0;
+    transition: color var(--duration) var(--ease);
+  }
+
+  .footer__link:hover {
+    color: var(--accent);
+  }
+
+  .footer__text {
+    font-size: var(--fs-small);
+    padding: 4px 0;
+  }
+
+  .footer__bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: var(--sp-4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--fs-xs);
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+  }
+
+  @media (max-width: 720px) {
+    .footer__grid {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-6);
+    }
+
+    .footer__brand {
+      grid-column: 1 / -1;
+    }
+
+    .footer__bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>

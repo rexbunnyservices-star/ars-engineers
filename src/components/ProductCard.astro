@@ -1,0 +1,99 @@
+---
+interface Props {
+  name: string;
+  description: string;
+  price: string;
+  icon: string;
+  href: string;
+}
+
+const { name, description, price, icon, href } = Astro.props;
+---
+
+<a href={href} class="product-card">
+  <div class="product-card__icon">
+    <i class={icon}></i>
+  </div>
+  <h3 class="product-card__name">{name}</h3>
+  <p class="product-card__desc">{description}</p>
+  <span class="product-card__price">{price}</span>
+  <span class="product-card__link">View Details <i class="ri-arrow-right-s-line"></i></span>
+</a>
+
+<style>
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: var(--sp-5);
+    transition: transform var(--duration) var(--ease),
+                box-shadow var(--duration) var(--ease),
+                border-color var(--duration) var(--ease);
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--border-accent);
+  }
+
+  .product-card__icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent-light);
+    border-radius: var(--radius-sm);
+    color: var(--accent);
+    font-size: 1.4rem;
+    margin-bottom: var(--sp-3);
+    transition: background var(--duration) var(--ease),
+                color var(--duration) var(--ease);
+  }
+
+  .product-card:hover .product-card__icon {
+    background: var(--accent);
+    color: var(--white);
+  }
+
+  .product-card__name {
+    font-size: var(--fs-h3);
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: var(--sp-1);
+  }
+
+  .product-card__desc {
+    font-size: var(--fs-small);
+    color: var(--body);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .product-card__price {
+    display: block;
+    margin-top: var(--sp-2);
+    font-size: var(--fs-small);
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .product-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: var(--sp-3);
+    font-size: var(--fs-small);
+    font-weight: 600;
+    color: var(--ink);
+    transition: color var(--duration) var(--ease), gap var(--duration) var(--ease);
+  }
+
+  .product-card:hover .product-card__link {
+    color: var(--accent);
+    gap: 8px;
+  }
+</style>

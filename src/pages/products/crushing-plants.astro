@@ -1,0 +1,112 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SpecTable from '../../components/SpecTable.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const title = 'Crushing Plants | ARS Engineers & Technology';
+const desc = 'Complete crushing plant solutions — mobile, skid-mounted & stationary. 50 to 300 TPH. Manufactured in New Delhi.';
+
+const variants = [
+  { name: 'Mobile Crushing Plant', specs: [
+    { label: 'Type', value: 'Mobile (Trailer Mounted)' },
+    { label: 'Capacity', value: '50 – 200 TPH' },
+    { label: 'Primary Crusher', value: 'Jaw Crusher (various sizes)' },
+    { label: 'Secondary Crusher', value: 'Impact / Cone Crusher' },
+    { label: 'Screen', value: 'Multi-deck Vibrating Screen' },
+    { label: 'Conveyors', value: 'Integrated Belt Conveyors' },
+    { label: 'Mobility', value: 'Towable on Highway Trailer' },
+    { label: 'Setup Time', value: '2 – 4 hours' },
+    { label: 'Application', value: 'Road construction, remote sites, rental operations' },
+  ]},
+  { name: 'Skid-Mounted Crushing Plant', specs: [
+    { label: 'Type', value: 'Skid-Mounted (Fixed Base)' },
+    { label: 'Capacity', value: '100 – 250 TPH' },
+    { label: 'Primary Crusher', value: 'Jaw Crusher 150 TPH' },
+    { label: 'Secondary Crusher', value: 'Cone / VSI Crusher' },
+    { label: 'Screen', value: '2-3 Deck Vibrating Screen' },
+    { label: 'Foundation', value: 'Steel Skid Frame (No Concrete)' },
+    { label: 'Transport', value: 'Modular — fits standard truck' },
+    { label: 'Application', value: 'Semi-permanent quarry operations' },
+  ]},
+  { name: 'Stationary Crushing Plant', specs: [
+    { label: 'Type', value: 'Stationary (Concrete Foundation)' },
+    { label: 'Capacity', value: '150 – 300 TPH' },
+    { label: 'Primary Crusher', value: 'Jaw Crusher / Gyratory' },
+    { label: 'Secondary Crusher', value: 'Cone Crusher + VSI' },
+    { label: 'Screen', value: '3-4 Deck Vibrating Screen' },
+    { label: 'Automation', value: 'PLC Control Panel Available' },
+    { label: 'Foundation', value: 'Reinforced Concrete' },
+    { label: 'Application', value: 'Large quarries, mining, cement plants' },
+  ]},
+];
+
+const related = [
+  { name: 'Jaw Crushers', desc: 'Heavy-duty primary crushers for hard rock and ore processing.', price: 'From ₹5 Lakh', icon: 'ri-flashlight-line', href: '/products/jaw-crushers' },
+  { name: 'Belt Conveyors', desc: 'Flat, troughed & inclined belt conveyors for continuous material handling.', price: 'From ₹25,000', icon: 'ri-arrow-right-line', href: '/products/belt-conveyors' },
+  { name: 'Vibrating Screens', desc: 'Multi-deck screens for efficient material classification and sizing.', price: 'From ₹1 Lakh', icon: 'ri-layout-grid-line', href: '/products/vibrating-screens' },
+];
+---
+
+<Layout title={title} description={desc}>
+  <section class="product-hero">
+    <div class="container">
+      <p class="product-hero__breadcrumb">
+        <a href="/">Home</a> / <a href="/#products">Products</a> / Crushing Plants
+      </p>
+      <h1 class="product-hero__title">Crushing Plants</h1>
+      <p class="product-hero__desc">
+        ARS Engineers delivers complete turnkey crushing plant solutions — from single-component crushers to fully integrated plants with screens, conveyors, hoppers, and control systems. Choose from mobile, skid-mounted, or stationary configurations based on your operational requirements.
+      </p>
+      <p class="product-hero__desc">
+        Our plants handle a wide range of materials including granite, basalt, limestone, iron ore, and recycled concrete. With capacities from 50 to 300 TPH, we have a solution for every scale of operation.
+      </p>
+      <div class="product-hero__actions">
+        <a href="/#contact" class="btn btn--primary"><i class="ri-chat-3-line"></i> Get a Quote</a>
+        <a href="/#products" class="btn btn--outline">View All Products</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {variants.map((v) => (
+        <div style="margin-bottom: var(--sp-6);">
+          <h2 style="font-size: var(--fs-h3); font-weight: 700; color: var(--ink); margin-bottom: var(--sp-2);">{v.name}</h2>
+          <SpecTable specs={v.specs} />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section section--subtle">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__label">Related Products</span>
+        <h2 class="section__title">You May Also Need</h2>
+      </div>
+      <div style="display:grid; grid-template-columns: repeat(3,1fr); gap: var(--sp-4);">
+        {related.map((p) => <ProductCard {...p} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band__inner">
+        <div>
+          <h2 class="cta-band__title">Planning a Crushing Plant?</h2>
+          <p class="cta-band__text">We'll design a complete solution tailored to your site and material.</p>
+        </div>
+        <a href="/#contact" class="btn btn--white"><i class="ri-chat-3-line"></i> Get Free Quote</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .cta-band { background: var(--grad); padding: var(--sp-10) 0; }
+  .cta-band__inner { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-6); flex-wrap: wrap; }
+  .cta-band__title { font-size: var(--fs-h2); font-weight: 800; color: #fff; margin-bottom: var(--sp-1); }
+  .cta-band__text { font-size: var(--fs-body); color: rgba(255,255,255,0.85); }
+  @media (max-width: 720px) { .cta-band__inner { flex-direction: column; text-align: center; } [style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; } }
+</style>

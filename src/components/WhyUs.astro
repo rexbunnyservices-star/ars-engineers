@@ -1,0 +1,112 @@
+---
+const reasons = [
+  {
+    icon: 'ri-shield-check-line',
+    title: 'Quality First',
+    text: 'Every product undergoes rigorous quality testing before delivery. We use premium-grade materials to ensure long-lasting performance.',
+  },
+  {
+    icon: 'ri-team-line',
+    title: 'Expert Team',
+    text: 'A dedicated team of 10+ skilled engineers and technicians with deep industry experience in crushing and conveying.',
+  },
+  {
+    icon: 'ri-customer-service-2-line',
+    title: 'Client-Centric',
+    text: 'We listen to your specific requirements and deliver custom-configured solutions that perfectly match your operations.',
+  },
+  {
+    icon: 'ri-money-rupee-circle-line',
+    title: 'Best Pricing',
+    text: 'Factory-direct pricing with no middlemen. Get premium quality equipment at competitive prices that protect your budget.',
+  },
+  {
+    icon: 'ri-time-line',
+    title: 'Timely Delivery',
+    text: 'We respect your project timelines. Our efficient manufacturing and logistics ensure on-time delivery, every time.',
+  },
+  {
+    icon: 'ri-road-map-line',
+    title: 'Pan-India Logistics',
+    text: 'We ship across the country with reliable logistics partners. From Delhi to anywhere in India, we have you covered.',
+  },
+];
+---
+
+<section class="section section--subtle" id="why-us" data-num="03">
+  <div class="container">
+    <div class="section__head" data-reveal>
+      <span class="section__label">Why Choose Us</span>
+      <h2 class="section__title">Built Different, Built to Last</h2>
+      <p class="section__subtitle">We don't just sell machines — we deliver reliability, expertise, and lasting partnerships.</p>
+    </div>
+
+    <div class="whyus__grid" data-reveal>
+      {reasons.map((r) => (
+        <div class="whyus__card">
+          <div class="whyus__icon">
+            <i class={r.icon}></i>
+          </div>
+          <h3 class="whyus__title">{r.title}</h3>
+          <p class="whyus__text">{r.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .whyus__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--sp-4);
+  }
+
+  .whyus__card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: var(--sp-5);
+    transition: transform var(--duration) var(--ease),
+                box-shadow var(--duration) var(--ease),
+                border-color var(--duration) var(--ease);
+  }
+
+  .whyus__card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--border-accent);
+  }
+
+  .whyus__icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent-light);
+    border-radius: var(--radius-sm);
+    color: var(--accent);
+    font-size: 1.4rem;
+    margin-bottom: var(--sp-3);
+  }
+
+  .whyus__title {
+    font-size: var(--fs-h3);
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: var(--sp-1);
+  }
+
+  .whyus__text {
+    font-size: var(--fs-small);
+    color: var(--body);
+    line-height: 1.65;
+  }
+
+  @media (max-width: 720px) {
+    .whyus__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

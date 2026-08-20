@@ -1,0 +1,135 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SpecTable from '../../components/SpecTable.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const title = 'Belt Conveyors | ARS Engineers & Technology';
+const desc = 'Industrial belt conveyors for continuous material handling. Flat, troughed, inclined & roller belt conveyors from 50 to 200 TPH. Manufactured in New Delhi.';
+
+const variants = [
+  { name: 'Flat Belt Conveyor', specs: [
+    { label: 'Type', value: 'Flat Belt' },
+    { label: 'Belt Width', value: '400 mm – 500 mm' },
+    { label: 'Capacity', value: '50 TPH' },
+    { label: 'Conveyor Length', value: '3 m – 10 m' },
+    { label: 'Motor Power', value: '2 HP – 5 HP' },
+    { label: 'Speed', value: '1.0 m/s – 1.5 m/s' },
+    { label: 'Material', value: 'Mild Steel / SS304' },
+    { label: 'Application', value: 'General purpose material handling' },
+  ]},
+  { name: 'Troughed Belt Conveyor', specs: [
+    { label: 'Type', value: 'Troughed Belt' },
+    { label: 'Belt Width', value: '500 mm – 800 mm' },
+    { label: 'Capacity', value: '100 TPH' },
+    { label: 'Conveyor Length', value: '5 m – 20 m' },
+    { label: 'Motor Power', value: '5 HP – 15 HP' },
+    { label: 'Speed', value: '1.5 m/s – 2.5 m/s' },
+    { label: 'Material', value: 'Heavy Duty Mild Steel' },
+    { label: 'Application', value: 'Mining, quarrying, aggregate handling' },
+  ]},
+  { name: 'Inclined Belt Conveyor', specs: [
+    { label: 'Type', value: 'Inclined Belt' },
+    { label: 'Belt Width', value: '500 mm – 600 mm' },
+    { label: 'Capacity', value: '80 TPH' },
+    { label: 'Angle of Inclination', value: '15° – 30°' },
+    { label: 'Motor Power', value: '5 HP – 10 HP' },
+    { label: 'Speed', value: '1.2 m/s – 2.0 m/s' },
+    { label: 'Material', value: 'Mild Steel' },
+    { label: 'Application', value: 'Elevated material transfer' },
+  ]},
+  { name: 'Roller Belt Conveyor', specs: [
+    { label: 'Type', value: 'Roller Belt' },
+    { label: 'Belt Width', value: '500 mm – 800 mm' },
+    { label: 'Capacity', value: '120 TPH' },
+    { label: 'Roller Spacing', value: '1.0 m – 1.2 m' },
+    { label: 'Motor Power', value: '7.5 HP – 15 HP' },
+    { label: 'Speed', value: '1.5 m/s – 2.5 m/s' },
+    { label: 'Material', value: 'Heavy Duty MS with Rubber Rollers' },
+    { label: 'Application', value: 'Heavy bulk material transport' },
+  ]},
+  { name: 'Rubber Belt Conveyor', specs: [
+    { label: 'Type', value: 'Rubber Belt' },
+    { label: 'Belt Width', value: '400 mm – 1200 mm' },
+    { label: 'Capacity', value: '200 TPH' },
+    { label: 'Belt Grade', value: 'Food Grade / Industrial Grade' },
+    { label: 'Motor Power', value: '5 HP – 25 HP' },
+    { label: 'Speed', value: '1.0 m/s – 3.0 m/s' },
+    { label: 'Material', value: 'EP/NN Ply Rubber Belt' },
+    { label: 'Application', value: 'Coal, cement, grain, fertilizers' },
+  ]},
+];
+
+const related = [
+  { name: 'Screw Conveyors', desc: 'Inclined & vertical screw conveyors for bulk material transport.', price: 'From ₹1 Lakh', icon: 'ri-loop-right-line', href: '/products/screw-conveyors' },
+  { name: 'Vibrating Screens', desc: 'Multi-deck screens for efficient material classification and sizing.', price: 'From ₹1 Lakh', icon: 'ri-layout-grid-line', href: '/products/vibrating-screens' },
+  { name: 'Crushing Plants', desc: 'Complete mobile, skid-mounted & stationary crushing plant solutions.', price: 'From ₹5 Lakh', icon: 'ri-building-2-line', href: '/products/crushing-plants' },
+];
+---
+
+<Layout title={title} description={desc}>
+  <section class="product-hero">
+    <div class="container">
+      <p class="product-hero__breadcrumb">
+        <a href="/">Home</a> / <a href="/#products">Products</a> / Belt Conveyors
+      </p>
+      <h1 class="product-hero__title">Belt Conveyors</h1>
+      <p class="product-hero__desc">
+        ARS Engineers manufactures a comprehensive range of belt conveyors designed for continuous, reliable material handling across industries. From flat belt conveyors for light-duty applications to heavy-duty rubber belt conveyors handling up to 200 TPH, our conveyors are engineered for durability and low maintenance.
+      </p>
+      <p class="product-hero__desc">
+        Available in mild steel and stainless steel construction, our belt conveyors can be customized for length (3 m to 20 m), width (400 mm to 1200 mm), inclination, and motor power to suit your specific operational needs.
+      </p>
+      <div class="product-hero__actions">
+        <a href="/#contact" class="btn btn--primary"><i class="ri-chat-3-line"></i> Get a Quote</a>
+        <a href="/#products" class="btn btn--outline">View All Products</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {variants.map((v) => (
+        <div style="margin-bottom: var(--sp-6);">
+          <h2 style="font-size: var(--fs-h3); font-weight: 700; color: var(--ink); margin-bottom: var(--sp-2);">{v.name}</h2>
+          <SpecTable specs={v.specs} />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section section--subtle">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__label">Related Products</span>
+        <h2 class="section__title">You May Also Need</h2>
+      </div>
+      <div style="display:grid; grid-template-columns: repeat(3,1fr); gap: var(--sp-4);">
+        {related.map((p) => <ProductCard {...p} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band__inner">
+        <div>
+          <h2 class="cta-band__title">Need a Custom Belt Conveyor?</h2>
+          <p class="cta-band__text">Tell us your requirements and we'll configure the perfect solution.</p>
+        </div>
+        <a href="/#contact" class="btn btn--white"><i class="ri-chat-3-line"></i> Get Free Quote</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .cta-band { background: var(--grad); padding: var(--sp-10) 0; }
+  .cta-band__inner { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-6); flex-wrap: wrap; }
+  .cta-band__title { font-size: var(--fs-h2); font-weight: 800; color: #fff; margin-bottom: var(--sp-1); }
+  .cta-band__text { font-size: var(--fs-body); color: rgba(255,255,255,0.85); }
+
+  @media (max-width: 720px) {
+    .cta-band__inner { flex-direction: column; text-align: center; }
+    [style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; }
+  }
+</style>

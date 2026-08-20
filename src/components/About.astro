@@ -1,0 +1,141 @@
+---
+---
+<section class="section section--subtle" id="about" data-num="01">
+  <div class="container">
+    <div class="about__grid" data-reveal>
+      <div class="about__content">
+        <span class="section__label">About Us</span>
+        <h2 class="section__title">Established in 2014,<br/>Building Trust Ever Since</h2>
+        <p class="about__text">
+          Founded by <strong>Mr. E.A. Malik</strong> in I.P. Extension, New Delhi, ARS Engineers & Technology
+          has grown from a small workshop to a trusted name in crushing and conveying solutions.
+        </p>
+        <p class="about__text">
+          As a proprietorship firm with a team of <strong>10+ skilled professionals</strong>, we manufacture
+          and supply belt conveyors, jaw crushers, vibrating screens, and complete crushing plants
+          to clients across India. Our products are built to last and priced to deliver real value.
+        </p>
+        <div class="about__features">
+          <div class="about__feature">
+            <i class="ri-checkbox-circle-fill"></i>
+            <span>GST Registered Business</span>
+          </div>
+          <div class="about__feature">
+            <i class="ri-checkbox-circle-fill"></i>
+            <span>19+ Product Categories</span>
+          </div>
+          <div class="about__feature">
+            <i class="ri-checkbox-circle-fill"></i>
+            <span>Pan-India Client Base</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about__stats">
+        <div class="about__stat-card">
+          <span class="about__stat-num" data-count="10" data-suffix="+">0+</span>
+          <span class="about__stat-label">Years in Business</span>
+        </div>
+        <div class="about__stat-card">
+          <span class="about__stat-num" data-count="19" data-suffix="+">0+</span>
+          <span class="about__stat-label">Products</span>
+        </div>
+        <div class="about__stat-card">
+          <span class="about__stat-num" data-count="100" data-suffix="+">0+</span>
+          <span class="about__stat-label">Happy Clients</span>
+        </div>
+        <div class="about__stat-card">
+          <span class="about__stat-num" data-count="95" data-suffix="%">0%</span>
+          <span class="about__stat-label">Response Rate</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about__grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--sp-10);
+    align-items: center;
+  }
+
+  .about__text {
+    font-size: var(--fs-body);
+    color: var(--body);
+    line-height: 1.75;
+    margin-bottom: var(--sp-3);
+  }
+
+  .about__text strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .about__features {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-2);
+    margin-top: var(--sp-4);
+  }
+
+  .about__feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: var(--fs-small);
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .about__feature i {
+    color: var(--success);
+    font-size: 1.1rem;
+  }
+
+  .about__stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-4);
+  }
+
+  .about__stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: var(--sp-5) var(--sp-4);
+    text-align: center;
+    transition: transform var(--duration) var(--ease),
+                box-shadow var(--duration) var(--ease);
+  }
+
+  .about__stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .about__stat-num {
+    display: block;
+    font-size: var(--fs-h1);
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: var(--sp-1);
+  }
+
+  .about__stat-label {
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  @media (max-width: 720px) {
+    .about__grid {
+      grid-template-columns: 1fr;
+      gap: var(--sp-6);
+    }
+  }
+</style>

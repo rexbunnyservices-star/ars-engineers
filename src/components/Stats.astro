@@ -1,0 +1,58 @@
+---
+const stats = [
+  { num: 10, suffix: '+', label: 'Years in Business' },
+  { num: 19, suffix: '+', label: 'Product Categories' },
+  { num: 100, suffix: '+', label: 'Happy Clients' },
+  { num: 95, suffix: '%', label: 'Response Rate' },
+];
+---
+
+<section class="section section--dark section--stats" data-num="">
+  <div class="container">
+    <div class="stats__grid" data-reveal>
+      {stats.map((s) => (
+        <div class="stats__item">
+          <span class="stats__num" data-count={s.num} data-suffix={s.suffix}>0{s.suffix}</span>
+          <span class="stats__label">{s.label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section--stats {
+    padding: var(--sp-12) 0;
+  }
+
+  .stats__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--sp-4);
+    text-align: center;
+  }
+
+  .stats__num {
+    display: block;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: var(--sp-2);
+  }
+
+  .stats__label {
+    font-size: var(--fs-small);
+    font-weight: 500;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  @media (max-width: 720px) {
+    .stats__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--sp-6);
+    }
+  }
+</style>

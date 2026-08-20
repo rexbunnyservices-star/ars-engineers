@@ -1,0 +1,88 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SpecTable from '../../components/SpecTable.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const title = 'Roll Crushers | ARS Engineers & Technology';
+const desc = 'Double-roll crushers for fine and intermediate crushing. Manufactured in New Delhi, India.';
+
+const specs = [
+  { label: 'Type', value: 'Double Roll Crusher' },
+  { label: 'Capacity', value: '10 – 80 TPH (varies by model)' },
+  { label: 'Feed Size', value: 'Up to 200 mm' },
+  { label: 'Output Size', value: '5 mm – 20 mm' },
+  { label: 'Roll Diameter', value: '400 mm – 900 mm' },
+  { label: 'Roll Width', value: '400 mm – 800 mm' },
+  { label: 'Motor Power', value: '10 HP – 50 HP' },
+  { label: 'Roll Speed', value: '50 – 200 RPM' },
+  { label: 'Roll Material', value: 'Manganese Steel / Hard Chrome' },
+  { label: 'Spring Safety', value: 'Adjustable Spring Relief Mechanism' },
+  { label: 'Application', value: 'Coal, salt, limestone, coke, fertilizers, chemicals' },
+  { label: 'Advantage', value: 'Minimal fines generation, uniform product size' },
+];
+
+const related = [
+  { name: 'Hammer Crushers', desc: 'High-impact secondary crushers for medium-hard materials.', price: 'Contact for Price', icon: 'ri-hammer-line', href: '/products/hammer-crushers' },
+  { name: 'Jaw Crushers', desc: 'Heavy-duty primary crushers for hard rock and ore processing.', price: 'From ₹5 Lakh', icon: 'ri-flashlight-line', href: '/products/jaw-crushers' },
+  { name: 'Vibrating Screens', desc: 'Multi-deck screens for efficient material classification and sizing.', price: 'From ₹1 Lakh', icon: 'ri-layout-grid-line', href: '/products/vibrating-screens' },
+];
+---
+
+<Layout title={title} description={desc}>
+  <section class="product-hero">
+    <div class="container">
+      <p class="product-hero__breadcrumb">
+        <a href="/">Home</a> / <a href="/#products">Products</a> / Roll Crushers
+      </p>
+      <h1 class="product-hero__title">Roll Crushers</h1>
+      <p class="product-hero__desc">
+        Our double-roll crushers provide controlled, consistent crushing with minimal fines generation. The two counter-rotating rolls compress and shear material between them, producing a uniform product size that's ideal for applications where particle size distribution matters.
+      </p>
+      <p class="product-hero__desc">
+        Widely used in coal preparation, salt processing, chemical plants, and fertilizer production, these crushers feature adjustable roll gaps and spring-loaded safety mechanisms to protect against uncrushable tramp material.
+      </p>
+      <div class="product-hero__actions">
+        <a href="/#contact" class="btn btn--primary"><i class="ri-chat-3-line"></i> Get a Quote</a>
+        <a href="/#products" class="btn btn--outline">View All Products</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SpecTable specs={specs} />
+    </div>
+  </section>
+
+  <section class="section section--subtle">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__label">Related Products</span>
+        <h2 class="section__title">You May Also Need</h2>
+      </div>
+      <div style="display:grid; grid-template-columns: repeat(3,1fr); gap: var(--sp-4);">
+        {related.map((p) => <ProductCard {...p} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band__inner">
+        <div>
+          <h2 class="cta-band__title">Need a Roll Crusher?</h2>
+          <p class="cta-band__text">We'll help you choose the right roll configuration for your material.</p>
+        </div>
+        <a href="/#contact" class="btn btn--white"><i class="ri-chat-3-line"></i> Get Free Quote</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .cta-band { background: var(--grad); padding: var(--sp-10) 0; }
+  .cta-band__inner { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-6); flex-wrap: wrap; }
+  .cta-band__title { font-size: var(--fs-h2); font-weight: 800; color: #fff; margin-bottom: var(--sp-1); }
+  .cta-band__text { font-size: var(--fs-body); color: rgba(255,255,255,0.85); }
+  @media (max-width: 720px) { .cta-band__inner { flex-direction: column; text-align: center; } [style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; } }
+</style>

@@ -1,0 +1,87 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SpecTable from '../../components/SpecTable.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const title = 'Hammer Crushers | ARS Engineers & Technology';
+const desc = 'Heavy-duty hammer crushers for secondary crushing of medium-hard materials. Manufactured in New Delhi.';
+
+const specs = [
+  { label: 'Type', value: 'Heavy-Duty Hammer Crusher' },
+  { label: 'Capacity', value: '20 – 100 TPH (varies by model)' },
+  { label: 'Feed Size', value: 'Up to 350 mm' },
+  { label: 'Output Size', value: '5 mm – 25 mm' },
+  { label: 'Rotor Speed', value: '800 – 1200 RPM' },
+  { label: 'Motor Power', value: '20 HP – 75 HP' },
+  { label: 'Hammers', value: 'High-Manganese / Tungsten Carbide Tips' },
+  { label: 'Frame', value: 'Heavy Duty MS with Reinforced Liners' },
+  { label: 'Screen', value: 'Interchangeable Grate Screen (output control)' },
+  { label: 'Application', value: 'Limestone, gypsum, coal, soft to medium-hard materials' },
+  { label: 'Advantage', value: 'Single-stage crushing — high reduction ratio (10:1 to 20:1)' },
+];
+
+const related = [
+  { name: 'Jaw Crushers', desc: 'Heavy-duty primary crushers for hard rock and ore processing.', price: 'From ₹5 Lakh', icon: 'ri-flashlight-line', href: '/products/jaw-crushers' },
+  { name: 'Roll Crushers', desc: 'Double-roll crushers for fine and intermediate crushing stages.', price: 'Contact for Price', icon: 'ri-circle-line', href: '/products/roll-crushers' },
+  { name: 'Crushing Plants', desc: 'Complete mobile, skid-mounted & stationary crushing plant solutions.', price: 'From ₹5 Lakh', icon: 'ri-building-2-line', href: '/products/crushing-plants' },
+];
+---
+
+<Layout title={title} description={desc}>
+  <section class="product-hero">
+    <div class="container">
+      <p class="product-hero__breadcrumb">
+        <a href="/">Home</a> / <a href="/#products">Products</a> / Hammer Crushers
+      </p>
+      <h1 class="product-hero__title">Hammer Crushers</h1>
+      <p class="product-hero__desc">
+        Our hammer crushers deliver exceptional reduction ratios in a single crushing stage — turning 350 mm feed into 5–25 mm product without the need for secondary crushing. The high-speed rotor with manganese steel hammers ensures consistent output and efficient energy use.
+      </p>
+      <p class="product-hero__desc">
+        Ideal for limestone, gypsum, coal, and other soft to medium-hard materials, these crushers are widely used in cement plants, power stations, and mining operations. Interchangeable grate screens let you fine-tune the output size without changing hammers.
+      </p>
+      <div class="product-hero__actions">
+        <a href="/#contact" class="btn btn--primary"><i class="ri-chat-3-line"></i> Get a Quote</a>
+        <a href="/#products" class="btn btn--outline">View All Products</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SpecTable specs={specs} />
+    </div>
+  </section>
+
+  <section class="section section--subtle">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__label">Related Products</span>
+        <h2 class="section__title">You May Also Need</h2>
+      </div>
+      <div style="display:grid; grid-template-columns: repeat(3,1fr); gap: var(--sp-4);">
+        {related.map((p) => <ProductCard {...p} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band__inner">
+        <div>
+          <h2 class="cta-band__title">Interested in a Hammer Crusher?</h2>
+          <p class="cta-band__text">We'll match you with the right model for your material and capacity.</p>
+        </div>
+        <a href="/#contact" class="btn btn--white"><i class="ri-chat-3-line"></i> Get Free Quote</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .cta-band { background: var(--grad); padding: var(--sp-10) 0; }
+  .cta-band__inner { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-6); flex-wrap: wrap; }
+  .cta-band__title { font-size: var(--fs-h2); font-weight: 800; color: #fff; margin-bottom: var(--sp-1); }
+  .cta-band__text { font-size: var(--fs-body); color: rgba(255,255,255,0.85); }
+  @media (max-width: 720px) { .cta-band__inner { flex-direction: column; text-align: center; } [style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; } }
+</style>

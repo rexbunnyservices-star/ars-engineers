@@ -1,0 +1,103 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SpecTable from '../../components/SpecTable.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const title = 'Vibrating Screens | ARS Engineers & Technology';
+const desc = 'Multi-deck vibrating screens for material classification and sizing. 100 TPH and 150 TPH models. Manufactured in New Delhi.';
+
+const variants = [
+  { name: 'Vibrating Screen 150 TPH', specs: [
+    { label: 'Model', value: '150 TPH Heavy Duty' },
+    { label: 'Screen Size', value: '16 ft x 5 ft (4.8 m x 1.5 m)' },
+    { label: 'Decks', value: '2-Deck' },
+    { label: 'Capacity', value: '150 TPH' },
+    { label: 'Motor Power', value: '25 HP' },
+    { label: 'RPM', value: '900 – 1200 RPM' },
+    { label: 'Screen Media', value: 'Polyurethane / SS Mesh' },
+    { label: 'Amplitude', value: '4 – 8 mm' },
+    { label: 'Application', value: 'Aggregate sizing, mineral classification' },
+  ]},
+  { name: 'Vibrating Screen 100 TPH', specs: [
+    { label: 'Model', value: '100 TPH Standard' },
+    { label: 'Screen Size', value: '12 ft x 4 ft (3.6 m x 1.2 m)' },
+    { label: 'Decks', value: '2-Deck' },
+    { label: 'Capacity', value: '100 TPH' },
+    { label: 'Motor Power', value: '15 HP' },
+    { label: 'RPM', value: '900 – 1000 RPM' },
+    { label: 'Screen Media', value: 'Woven Wire / Polyurethane' },
+    { label: 'Amplitude', value: '3 – 6 mm' },
+    { label: 'Application', value: 'Gravel, sand, coal screening' },
+  ]},
+];
+
+const related = [
+  { name: 'Jaw Crushers', desc: 'Heavy-duty primary crushers for hard rock and ore processing.', price: 'From ₹5 Lakh', icon: 'ri-flashlight-line', href: '/products/jaw-crushers' },
+  { name: 'Belt Conveyors', desc: 'Flat, troughed & inclined belt conveyors for continuous material handling.', price: 'From ₹25,000', icon: 'ri-arrow-right-line', href: '/products/belt-conveyors' },
+  { name: 'Crushing Plants', desc: 'Complete mobile, skid-mounted & stationary crushing plant solutions.', price: 'From ₹5 Lakh', icon: 'ri-building-2-line', href: '/products/crushing-plants' },
+];
+---
+
+<Layout title={title} description={desc}>
+  <section class="product-hero">
+    <div class="container">
+      <p class="product-hero__breadcrumb">
+        <a href="/">Home</a> / <a href="/#products">Products</a> / Vibrating Screens
+      </p>
+      <h1 class="product-hero__title">Vibrating Screens</h1>
+      <p class="product-hero__desc">
+        Our vibrating screens are designed for high-efficiency material classification in mining, quarrying, and aggregate operations. With multi-deck configurations and durable screen media, they deliver precise sizing at capacities up to 150 TPH.
+      </p>
+      <p class="product-hero__desc">
+        Built with heavy-duty vibratory motors and robust side plates, these screens withstand continuous operation in demanding environments. Available with polyurethane or woven wire screen media for different material types.
+      </p>
+      <div class="product-hero__actions">
+        <a href="/#contact" class="btn btn--primary"><i class="ri-chat-3-line"></i> Get a Quote</a>
+        <a href="/#products" class="btn btn--outline">View All Products</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {variants.map((v) => (
+        <div style="margin-bottom: var(--sp-6);">
+          <h2 style="font-size: var(--fs-h3); font-weight: 700; color: var(--ink); margin-bottom: var(--sp-2);">{v.name}</h2>
+          <SpecTable specs={v.specs} />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section section--subtle">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__label">Related Products</span>
+        <h2 class="section__title">You May Also Need</h2>
+      </div>
+      <div style="display:grid; grid-template-columns: repeat(3,1fr); gap: var(--sp-4);">
+        {related.map((p) => <ProductCard {...p} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band__inner">
+        <div>
+          <h2 class="cta-band__title">Looking for a Screening Solution?</h2>
+          <p class="cta-band__text">Tell us your material type and required output size.</p>
+        </div>
+        <a href="/#contact" class="btn btn--white"><i class="ri-chat-3-line"></i> Get Free Quote</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .cta-band { background: var(--grad); padding: var(--sp-10) 0; }
+  .cta-band__inner { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-6); flex-wrap: wrap; }
+  .cta-band__title { font-size: var(--fs-h2); font-weight: 800; color: #fff; margin-bottom: var(--sp-1); }
+  .cta-band__text { font-size: var(--fs-body); color: rgba(255,255,255,0.85); }
+  @media (max-width: 720px) { .cta-band__inner { flex-direction: column; text-align: center; } [style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; } }
+</style>

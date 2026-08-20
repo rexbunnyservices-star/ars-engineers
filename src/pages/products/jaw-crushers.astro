@@ -1,0 +1,103 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SpecTable from '../../components/SpecTable.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const title = 'Jaw Crushers | ARS Engineers & Technology';
+const desc = 'Heavy-duty jaw crushers for primary crushing. 80 TPH and 150 TPH models. Manufactured in New Delhi, India.';
+
+const variants = [
+  { name: 'Jaw Crusher 150 TPH', specs: [
+    { label: 'Model', value: '150 TPH Heavy Duty' },
+    { label: 'Feed Opening', value: '400 x 600 mm' },
+    { label: 'Capacity', value: '150 TPH' },
+    { label: 'Motor Power', value: '100 HP' },
+    { label: 'CSS Range', value: '40 mm – 100 mm' },
+    { label: 'Flywheel Speed', value: '275 RPM' },
+    { label: 'Weight', value: '~12,000 kg' },
+    { label: 'Material', value: 'Manganese Steel Jaw Plates' },
+    { label: 'Application', value: 'Primary crushing of hard rock, ore, granite, basalt' },
+  ]},
+  { name: 'Jaw Crusher 80 TPH (Trolley Mounted)', specs: [
+    { label: 'Model', value: '80 TPH Portable' },
+    { label: 'Feed Opening', value: '200 x 300 mm' },
+    { label: 'Capacity', value: '80 TPH' },
+    { label: 'Motor Power', value: '40 HP' },
+    { label: 'CSS Range', value: '20 mm – 50 mm' },
+    { label: 'Mounting', value: 'Trolley / Portable Skid' },
+    { label: 'Weight', value: '~3,500 kg' },
+    { label: 'Material', value: 'Manganese Steel Jaw Plates' },
+    { label: 'Application', value: 'Portable crushing, small quarries, road construction' },
+  ]},
+];
+
+const related = [
+  { name: 'Hammer Crushers', desc: 'High-impact secondary crushers for medium-hard materials.', price: 'Contact for Price', icon: 'ri-hammer-line', href: '/products/hammer-crushers' },
+  { name: 'Roll Crushers', desc: 'Double-roll crushers for fine and intermediate crushing stages.', price: 'Contact for Price', icon: 'ri-circle-line', href: '/products/roll-crushers' },
+  { name: 'Crushing Plants', desc: 'Complete mobile, skid-mounted & stationary crushing plant solutions.', price: 'From ₹5 Lakh', icon: 'ri-building-2-line', href: '/products/crushing-plants' },
+];
+---
+
+<Layout title={title} description={desc}>
+  <section class="product-hero">
+    <div class="container">
+      <p class="product-hero__breadcrumb">
+        <a href="/">Home</a> / <a href="/#products">Products</a> / Jaw Crushers
+      </p>
+      <h1 class="product-hero__title">Jaw Crushers</h1>
+      <p class="product-hero__desc">
+        Our jaw crushers are the workhorses of primary crushing. Built with high-manganese steel jaw plates and robust mild steel frames, they deliver reliable performance in the toughest conditions — from quarrying granite to processing iron ore.
+      </p>
+      <p class="product-hero__desc">
+        We offer two configurations: a high-capacity 150 TPH stationary unit for large operations, and a portable 80 TPH trolley-mounted unit for mobile crushing needs. Both models feature easy CSS adjustment and low maintenance requirements.
+      </p>
+      <div class="product-hero__actions">
+        <a href="/#contact" class="btn btn--primary"><i class="ri-chat-3-line"></i> Get a Quote</a>
+        <a href="/#products" class="btn btn--outline">View All Products</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {variants.map((v) => (
+        <div style="margin-bottom: var(--sp-6);">
+          <h2 style="font-size: var(--fs-h3); font-weight: 700; color: var(--ink); margin-bottom: var(--sp-2);">{v.name}</h2>
+          <SpecTable specs={v.specs} />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section section--subtle">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__label">Related Products</span>
+        <h2 class="section__title">You May Also Need</h2>
+      </div>
+      <div style="display:grid; grid-template-columns: repeat(3,1fr); gap: var(--sp-4);">
+        {related.map((p) => <ProductCard {...p} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band__inner">
+        <div>
+          <h2 class="cta-band__title">Need a Jaw Crusher?</h2>
+          <p class="cta-band__text">We'll help you choose the right model for your capacity and material.</p>
+        </div>
+        <a href="/#contact" class="btn btn--white"><i class="ri-chat-3-line"></i> Get Free Quote</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .cta-band { background: var(--grad); padding: var(--sp-10) 0; }
+  .cta-band__inner { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-6); flex-wrap: wrap; }
+  .cta-band__title { font-size: var(--fs-h2); font-weight: 800; color: #fff; margin-bottom: var(--sp-1); }
+  .cta-band__text { font-size: var(--fs-body); color: rgba(255,255,255,0.85); }
+  @media (max-width: 720px) { .cta-band__inner { flex-direction: column; text-align: center; } [style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; } }
+</style>
