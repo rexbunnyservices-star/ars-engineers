@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════════════
    ARS Engineers & Technology — Design System
-   Industrial dark theme · Construction orange · Heavy machinery
+   Light theme · Deep navy + warm gold · Premium industrial
    ═══════════════════════════════════════════════════════════ */
 
 /* ── Reset & Base ──────────────────────────────────────── */
@@ -30,40 +30,45 @@ input, textarea, select { font: inherit; color: inherit; }
 
 /* ── Design Tokens ─────────────────────────────────────── */
 :root {
-  /* Canvas — dark steel / slate */
-  --bg: #0c1017;
-  --bg-card: #141c27;
-  --bg-subtle: #111820;
-  --bg-dark: #080c12;
+  /* Canvas — warm off-white */
+  --bg: #f8f7f4;
+  --bg-card: #ffffff;
+  --bg-subtle: #f0ede6;
+  --bg-dark: #0f2147;
 
   /* Text */
-  --ink: #f0f2f5;
-  --body: #a8b4c2;
-  --muted: #5a6978;
+  --ink: #0f2147;
+  --body: #4a5568;
+  --muted: #8896a6;
   --white: #ffffff;
 
-  /* Accent — construction orange (Caterpillar / heavy equipment) */
-  --accent: #ff6b00;
-  --accent-hover: #e85f00;
-  --accent-light: rgba(255, 107, 0, 0.10);
-  --accent-glow: rgba(255, 107, 0, 0.20);
+  /* Accent — royal blue */
+  --accent: #1a56db;
+  --accent-hover: #1448b0;
+  --accent-light: rgba(26, 86, 219, 0.08);
+  --accent-glow: rgba(26, 86, 219, 0.15);
+
+  /* Secondary accent — warm gold */
+  --gold: #d4a843;
+  --gold-hover: #c89b3c;
+  --gold-light: rgba(212, 168, 67, 0.12);
 
   /* Semantic */
-  --success: #22c55e;
-  --danger: #ef4444;
-  --warning: #f59e0b;
+  --success: #16a34a;
+  --danger: #dc2626;
+  --warning: #d97706;
 
   /* Surfaces */
-  --border: rgba(255, 255, 255, 0.06);
-  --border-accent: rgba(255, 107, 0, 0.35);
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
-  --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
-  --shadow-lg: 0 8px 32px rgba(0,0,0,0.5);
-  --shadow-accent: 0 4px 24px rgba(255, 107, 0, 0.25);
+  --border: rgba(15, 33, 71, 0.08);
+  --border-accent: rgba(26, 86, 219, 0.3);
+  --shadow-sm: 0 1px 3px rgba(15,33,71,0.08);
+  --shadow-md: 0 4px 16px rgba(15,33,71,0.1);
+  --shadow-lg: 0 8px 32px rgba(15,33,71,0.12);
+  --shadow-accent: 0 4px 24px rgba(26,86,219,0.15);
 
   /* Gradient */
-  --grad: linear-gradient(135deg, #ff6b00, #ff9a3c);
-  --grad-dark: linear-gradient(135deg, #0c1017, #1a2332);
+  --grad: linear-gradient(135deg, #0f2147, #1a56db);
+  --grad-gold: linear-gradient(135deg, #d4a843, #c89b3c);
 
   /* Typography */
   --fs-hero: clamp(2.4rem, 5.5vw, 4.2rem);
@@ -127,7 +132,7 @@ input, textarea, select { font: inherit; color: inherit; }
 }
 
 .section--dark .section__title { color: var(--white); }
-.section--dark .section__subtitle { color: rgba(255,255,255,0.5); }
+.section--dark .section__subtitle { color: rgba(255,255,255,0.6); }
 
 .section__head {
   text-align: center;
@@ -178,14 +183,14 @@ input, textarea, select { font: inherit; color: inherit; }
   right: var(--sp-4);
   font-size: clamp(4rem, 10vw, 8rem);
   font-weight: 900;
-  color: rgba(255,255,255,0.02);
+  color: rgba(15, 33, 71, 0.03);
   line-height: 1;
   pointer-events: none;
   z-index: 0;
 }
 
 .section--dark[data-num]::before {
-  color: rgba(255,255,255,0.03);
+  color: rgba(255,255,255,0.04);
 }
 
 /* ── Grid ──────────────────────────────────────────────── */
@@ -297,14 +302,15 @@ input, textarea, select { font: inherit; color: inherit; }
 }
 
 .btn--outline {
-  border: 2px solid rgba(255,255,255,0.25);
+  border: 2px solid var(--border);
   color: var(--ink);
   background: transparent;
 }
 
 .btn--outline:hover {
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(255,255,255,0.4);
+  background: var(--accent-light);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .btn--ghost {
@@ -318,13 +324,14 @@ input, textarea, select { font: inherit; color: inherit; }
 
 .btn--white {
   background: var(--white);
-  color: #0c1017;
+  color: var(--ink);
+  box-shadow: var(--shadow-sm);
 }
 
 .btn--white:hover {
-  background: rgba(255,255,255,0.9);
+  background: #f0f2f5;
   transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgba(255,255,255,0.15);
+  box-shadow: var(--shadow-md);
 }
 
 .btn--sm {
@@ -367,10 +374,10 @@ input, textarea, select { font: inherit; color: inherit; }
 }
 
 .nav.scrolled {
-  background: rgba(12, 16, 23, 0.92);
+  background: rgba(248, 247, 244, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 1px 12px rgba(0,0,0,0.4);
+  box-shadow: 0 1px 12px rgba(15,33,71,0.08);
 }
 
 .nav__inner {
@@ -512,8 +519,8 @@ input, textarea, select { font: inherit; color: inherit; }
 .form-select {
   width: 100%;
   padding: 12px 16px;
-  background: rgba(255,255,255,0.04);
-  border: 1.5px solid rgba(255,255,255,0.08);
+  background: var(--bg-subtle);
+  border: 1.5px solid var(--border);
   border-radius: var(--radius-sm);
   font-size: var(--fs-body);
   color: var(--ink);
@@ -541,7 +548,7 @@ input, textarea, select { font: inherit; color: inherit; }
 
 .form-select {
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235a6978' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238896a6' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 16px center;
   padding-right: 40px;
@@ -558,8 +565,8 @@ input, textarea, select { font: inherit; color: inherit; }
   align-items: center;
   gap: 6px;
   padding: 8px 16px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   border-radius: 100px;
   font-size: var(--fs-xs);
   font-weight: 600;
@@ -663,7 +670,7 @@ input, textarea, select { font: inherit; color: inherit; }
   font-weight: 600;
   color: var(--ink);
   width: 40%;
-  background: rgba(255,255,255,0.02);
+  background: var(--bg-subtle);
   border-right: 1px solid var(--border);
 }
 

@@ -1,6 +1,7 @@
 ---
 ---
 <section class="section cta-band">
+  <div class="cta-band__pattern"></div>
   <div class="container" data-reveal>
     <div class="cta-band__inner">
       <div class="cta-band__content">
@@ -22,17 +23,24 @@
     overflow: hidden;
   }
 
-  .cta-band::before {
-    content: '';
+  .cta-band__pattern {
     position: absolute;
     inset: 0;
-    background: repeating-linear-gradient(
-      -45deg,
-      transparent 0px,
-      transparent 14px,
-      rgba(0,0,0,0.06) 14px,
-      rgba(0,0,0,0.06) 28px
-    );
+    background:
+      repeating-linear-gradient(
+        90deg,
+        rgba(212,168,67,0.04) 0px,
+        rgba(212,168,67,0.04) 1px,
+        transparent 1px,
+        transparent 40px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        rgba(212,168,67,0.04) 0px,
+        rgba(212,168,67,0.04) 1px,
+        transparent 1px,
+        transparent 40px
+      );
     pointer-events: none;
   }
 
@@ -42,6 +50,8 @@
     justify-content: space-between;
     gap: var(--sp-6);
     flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
   }
 
   .cta-band__title {

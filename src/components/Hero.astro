@@ -42,7 +42,7 @@
 
 <style>
   section.hero-section {
-    background: linear-gradient(170deg, #0c1017 0%, #111820 40%, #0c1017 100%);
+    background: linear-gradient(170deg, #f8f7f4 0%, #f0ede6 40%, #f8f7f4 100%);
     position: relative;
     overflow: hidden;
   }
@@ -54,7 +54,7 @@
     right: -10%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(255,107,0,0.06) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(26,86,219,0.05) 0%, transparent 70%);
     pointer-events: none;
   }
 
@@ -65,7 +65,7 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255,107,0,0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(26,86,219,0.15), transparent);
   }
 
   .hero__inner {
@@ -95,10 +95,10 @@
     display: block;
     width: 80px;
     height: 3px;
-    background: var(--accent);
+    background: var(--gold);
     border-radius: 1px;
     margin-top: var(--sp-3);
-    box-shadow: 0 0 12px rgba(255,107,0,0.4);
+    box-shadow: 0 0 12px rgba(212,168,67,0.3);
   }
 
   .hero__text {
@@ -123,8 +123,9 @@
     font-size: 0.75rem;
     font-weight: 600;
     color: var(--body);
+    box-shadow: var(--shadow-sm);
   }
-  .hero__trust-chip i { color: var(--accent); }
+  .hero__trust-chip i { color: var(--gold); }
 
   .hero__visual { position: relative; height: 420px; }
 
@@ -141,12 +142,12 @@
   .hero__card--main p { font-size: var(--fs-small); color: var(--body); }
   .hero__card--secondary { bottom: 60px; left: 0; display: flex; align-items: center; gap: var(--sp-2); padding: 14px 20px; }
   .hero__card--secondary span { font-size: var(--fs-small); font-weight: 600; color: var(--ink); }
-  .hero__card--accent { bottom: 0; right: 40px; background: var(--accent); border-color: var(--accent); display: flex; align-items: center; gap: var(--sp-2); padding: 14px 20px; box-shadow: 0 4px 24px rgba(255,107,0,0.3); }
+  .hero__card--accent { bottom: 0; right: 40px; background: var(--gold); border-color: var(--gold); display: flex; align-items: center; gap: var(--sp-2); padding: 14px 20px; box-shadow: 0 4px 24px rgba(212,168,67,0.3); }
   .hero__card--accent span { font-size: var(--fs-small); font-weight: 600; color: #fff; }
 
   .hero__card-icon { width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; background: var(--accent-light); border-radius: var(--radius-sm); color: var(--accent); font-size: 1.6rem; margin-bottom: var(--sp-3); }
   .hero__card-icon--sm { width: 36px; height: 36px; font-size: 1.1rem; margin-bottom: 0; }
-  .hero__card-icon--white { background: rgba(255,255,255,0.2); color: #fff; }
+  .hero__card-icon--white { background: rgba(255,255,255,0.25); color: #fff; }
 
   .hero__scroll {
     position: absolute;

@@ -8,7 +8,7 @@ const stats = [
 ---
 
 <section class="section section--dark section--stats" data-num="">
-  <div class="stats__stripe"></div>
+  <div class="stats__accent-bar"></div>
   <div class="container">
     <div class="stats__grid" data-reveal>
       {stats.map((s) => (
@@ -26,23 +26,16 @@ const stats = [
     padding: var(--sp-12) 0;
     position: relative;
     overflow: hidden;
-    background: #080c12;
+    background: #0f2147;
   }
 
-  .stats__stripe {
+  .stats__accent-bar {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 3px;
-    background: repeating-linear-gradient(
-      90deg,
-      var(--accent) 0px,
-      var(--accent) 20px,
-      transparent 20px,
-      transparent 30px
-    );
-    opacity: 0.6;
+    background: var(--gold);
   }
 
   .stats__grid {
@@ -56,7 +49,7 @@ const stats = [
     display: block;
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 900;
-    color: var(--accent);
+    color: var(--gold);
     line-height: 1;
     margin-bottom: var(--sp-2);
   }
@@ -64,7 +57,7 @@ const stats = [
   .stats__label {
     font-size: var(--fs-small);
     font-weight: 500;
-    color: rgba(255,255,255,0.6);
+    color: rgba(255,255,255,0.65);
     text-transform: uppercase;
     letter-spacing: 0.06em;
   }
