@@ -1,4 +1,4 @@
-name: Deploy to Cloudflare Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -29,6 +29,20 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Rewrite absolute URLs for project subpath
+        run: |
+          python3 - <<'EOF'
+          import re
+          from pathlib import Path
+
+          pat = re.compile(r'((?:href|src|content)=")/(?!/)(?!ars-engineers)')
+          for f in Path("dist").rglob("*.html"):
+              s = f.read_text(encoding="utf-8")
+              s2, n = pat.subn(r"\1/ars-engineers/", s)
+              if n:
+                  f.write_text(s2, encoding="utf-8", newline="\n")
+                  print(f"{f}: {n} urls rewritten")
+          EOF
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
