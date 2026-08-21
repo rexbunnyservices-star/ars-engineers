@@ -6,6 +6,7 @@ const products = [
     price: 'From ₹25,000',
     icon: 'ri-arrow-right-line',
     href: '/products/belt-conveyors',
+    image: '/images/belt-conveyor.jpg',
   },
   {
     name: 'Jaw Crushers',
@@ -13,6 +14,7 @@ const products = [
     price: 'From ₹5 Lakh',
     icon: 'ri-flashlight-line',
     href: '/products/jaw-crushers',
+    image: '/images/jaw-crusher.png',
   },
   {
     name: 'Vibrating Screens',
@@ -20,6 +22,7 @@ const products = [
     price: 'From ₹1 Lakh',
     icon: 'ri-layout-grid-line',
     href: '/products/vibrating-screens',
+    image: '/images/vibrating-screen.png',
   },
   {
     name: 'Screw Conveyors',
@@ -27,6 +30,7 @@ const products = [
     price: 'From ₹1 Lakh',
     icon: 'ri-loop-right-line',
     href: '/products/screw-conveyors',
+    image: '/images/screw-conveyor.jpg',
   },
   {
     name: 'Crushing Plants',
@@ -34,6 +38,7 @@ const products = [
     price: 'From ₹5 Lakh',
     icon: 'ri-building-2-line',
     href: '/products/crushing-plants',
+    image: '/images/crushing-plant.png',
   },
   {
     name: 'Coal Crushers',
@@ -41,6 +46,7 @@ const products = [
     price: 'From ₹1.5 Lakh',
     icon: 'ri-fire-line',
     href: '/products/coal-crushers',
+    image: '/images/coal-crusher.jpg',
   },
   {
     name: 'Hammer Crushers',
@@ -48,6 +54,7 @@ const products = [
     price: 'Contact for Price',
     icon: 'ri-hammer-line',
     href: '/products/hammer-crushers',
+    image: '/images/hammer-crusher.jpg',
   },
   {
     name: 'Roll Crushers',
@@ -55,6 +62,7 @@ const products = [
     price: 'Contact for Price',
     icon: 'ri-circle-line',
     href: '/products/roll-crushers',
+    image: '/images/roll-crusher.jpg',
   },
 ];
 ---
@@ -70,8 +78,8 @@ const products = [
     <div class="products__grid" data-reveal>
       {products.map((p) => (
         <a href={p.href} class="products__card">
-          <div class="products__card-icon">
-            <i class={p.icon}></i>
+          <div class="products__card-img">
+            <img src={p.image} alt={p.name} loading="lazy" width="400" height="300" />
           </div>
           <h3 class="products__card-name">{p.name}</h3>
           <p class="products__card-desc">{p.desc}</p>
@@ -96,7 +104,7 @@ const products = [
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: var(--sp-5);
+    overflow: hidden;
     transition: transform var(--duration) var(--ease),
                 box-shadow var(--duration) var(--ease),
                 border-color var(--duration) var(--ease);
@@ -108,24 +116,22 @@ const products = [
     border-color: var(--border-accent);
   }
 
-  .products__card-icon {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--accent-light);
-    border-radius: var(--radius-sm);
-    color: var(--accent);
-    font-size: 1.4rem;
-    margin-bottom: var(--sp-3);
-    transition: background var(--duration) var(--ease),
-                color var(--duration) var(--ease);
+  .products__card-img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: var(--bg-subtle);
   }
 
-  .products__card:hover .products__card-icon {
-    background: var(--accent);
-    color: var(--white);
+  .products__card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s var(--ease);
+  }
+
+  .products__card:hover .products__card-img img {
+    transform: scale(1.05);
   }
 
   .products__card-name {
@@ -133,6 +139,7 @@ const products = [
     font-weight: 700;
     color: var(--ink);
     margin-bottom: var(--sp-1);
+    padding: var(--sp-4) var(--sp-4) 0;
   }
 
   .products__card-desc {
@@ -140,6 +147,7 @@ const products = [
     color: var(--body);
     line-height: 1.6;
     flex: 1;
+    padding: 0 var(--sp-4);
   }
 
   .products__card-price {
@@ -148,6 +156,7 @@ const products = [
     font-size: var(--fs-small);
     font-weight: 700;
     color: var(--accent);
+    padding: 0 var(--sp-4);
   }
 
   .products__card-link {
@@ -158,6 +167,7 @@ const products = [
     font-size: var(--fs-small);
     font-weight: 600;
     color: var(--ink);
+    padding: 0 var(--sp-4) var(--sp-4);
     transition: color var(--duration) var(--ease), gap var(--duration) var(--ease);
   }
 
