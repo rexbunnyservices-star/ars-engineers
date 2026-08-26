@@ -9,7 +9,7 @@
     </div>
 
     <div class="contact__grid" data-reveal>
-      <form class="contact__form" action="mailto:info@arsengineers.in" method="POST" enctype="text/plain">
+      <form class="contact__form" id="contact-form">
         <div class="contact__form-row">
           <div class="form-group">
             <label class="form-label" for="name">Full Name *</label>
@@ -46,6 +46,9 @@
         <button type="submit" class="btn btn--primary" style="width:100%;">
           <i class="ri-send-plane-line"></i> Send Message
         </button>
+        <p class="contact__form-note" id="form-note" style="display:none;margin-top:var(--sp-2);font-size:var(--fs-small);color:var(--success);text-align:center;">
+          <i class="ri-check-line"></i> Opening your email client…
+        </p>
       </form>
 
       <div class="contact__info">
@@ -61,7 +64,7 @@
           <div class="contact__info-icon"><i class="ri-phone-fill"></i></div>
           <div>
             <h4>Phone</h4>
-            <a href="tel:+91XXXXXXXXXX">+91 XXXXX XXXXX</a>
+            <a href="tel:+911204202899">+91 120 420 2899</a>
           </div>
         </div>
 
@@ -73,14 +76,14 @@
           </div>
         </div>
 
-        <a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%27m%20interested%20in%20your%20crushing%20and%20conveying%20products.%20Can%20you%20share%20more%20details%3F"
+        <a href="https://wa.me/919871637116?text=Hi%2C%20I%27m%20interested%20in%20your%20crushing%20and%20conveying%20products.%20Can%20you%20share%20more%20details%3F"
            class="btn contact__whatsapp" target="_blank" rel="noopener">
           <i class="ri-whatsapp-fill"></i> Chat on WhatsApp
         </a>
 
         <div class="contact__map">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14003.0!2d77.29!3d28.62!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd0f0f0f0f0f%3A0x0!2sI.P.+Extension%2C+New+Delhi%2C+Delhi!5e0!3m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.5!2d77.2906!3d28.6139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204d19!2sI.P.%20Extension%2C%20New%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
             width="100%"
             height="220"
             style="border:0;border-radius:var(--radius-sm);"
@@ -183,3 +186,25 @@
     }
   }
 </style>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const note = document.getElementById('form-note');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const fd = new FormData(form);
+      const name = fd.get('name') || '';
+      const phone = fd.get('phone') || '';
+      const email = fd.get('email') || '';
+      const product = fd.get('product') || 'Not specified';
+      const message = fd.get('message') || '';
+
+      const subject = `Quote Request — ${name}`;
+      const body = `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nProduct: ${product}\n\nMessage:\n${message}`;
+      window.location.href = `mailto:info@arsengineers.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      if (note) note.style.display = 'block';
+    });
+  }
+</script>
