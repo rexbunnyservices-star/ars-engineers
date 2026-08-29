@@ -1,0 +1,89 @@
+---
+const machinery = [
+  'Lathe',
+  'Gear Hobbing',
+  'Milling Machine',
+  'Shaper',
+  'Press',
+  'Slotting',
+  'Cutting',
+  'Bending Rolling',
+  'Drill Machine',
+  'Welding Machine',
+  'Grinder',
+  'Hacksaw',
+  'Wire Rope Hoist (3 Ton)',
+  'Chain Pulley Block',
+  'Polishing & Buffing',
+  'Testing',
+  'Painting Spray Machine',
+];
+---
+
+<section class="section section--card" id="machinery" data-num="03">
+  <div class="container">
+    <div class="section__head" data-reveal>
+      <span class="section__label">Manufacturing Capability</span>
+      <h2 class="section__title">In-House Machinery &amp; Production</h2>
+      <p class="section__subtitle">
+        Every ARSM product is fabricated in our own modern production unit in
+        I.P. Extension, Delhi &mdash; equipped with the full range of machine
+        tools required to build, test and finish each unit in-house.
+      </p>
+    </div>
+
+    <div class="machinery__grid" data-reveal>
+      {machinery.map((m) => (
+        <div class="machinery__item">
+          <i class="ri-settings-3-line"></i>
+          <span>{m}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .machinery__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--sp-3);
+    margin-top: var(--sp-8);
+  }
+
+  .machinery__item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: var(--sp-3);
+    font-weight: 600;
+    color: var(--ink);
+    transition: transform var(--duration) var(--ease),
+                border-color var(--duration) var(--ease);
+  }
+
+  .machinery__item i {
+    font-size: 1.3rem;
+    color: var(--accent);
+  }
+
+  .machinery__item:hover {
+    transform: translateY(-2px);
+    border-color: var(--border-accent);
+  }
+
+  @media (max-width: 960px) {
+    .machinery__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .machinery__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

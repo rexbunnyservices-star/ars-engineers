@@ -1,0 +1,114 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SpecTable from '../../components/SpecTable.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const title = 'Chain Conveyors | ARSM Engineering & Technology';
+const desc = 'Drag chain & chain conveyors for heavy-duty material handling. Manufactured in New Delhi by ARSM Engineering & Technology.';
+
+const variants = [
+  {
+    name: 'Drag Chain Conveyor',
+    specs: [
+      { label: 'Type', value: 'Drag Chain / En-Masse Conveyor' },
+      { label: 'Capacity', value: '50 – 300 TPH' },
+      { label: 'Conveyor Length', value: '10 m – 100 m' },
+      { label: 'Chain Speed', value: '0.1 m/s – 0.5 m/s' },
+      { label: 'Chain Type', value: 'Drop Forged / Welded Link Chain' },
+      { label: 'Motor Power', value: '10 HP – 75 HP' },
+      { label: 'Trough Material', value: 'MS / Hardox / SS304' },
+      { label: 'Flight Spacing', value: '250 mm – 500 mm' },
+      { label: 'Application', value: 'Coal, ash, cement, grain, biomass handling' },
+      { label: 'Advantage', value: 'Enclosed dust-free operation, multiple inlets/outlets, low maintenance' },
+    ]
+  },
+  {
+    name: 'Chain Conveyor (Apron / Slat)',
+    specs: [
+      { label: 'Type', value: 'Apron / Slat Chain Conveyor' },
+      { label: 'Capacity', value: '100 – 500 TPH' },
+      { label: 'Conveyor Length', value: '5 m – 50 m' },
+      { label: 'Chain Speed', value: '0.05 m/s – 0.2 m/s' },
+      { label: 'Pan/Slat Material', value: 'Manganese Steel / Hardox' },
+      { label: 'Chain Type', value: 'Heavy Duty Forged Chain' },
+      { label: 'Motor Power', value: '15 HP – 100 HP' },
+      { label: 'Inclination', value: 'Up to 25°' },
+      { label: 'Application', value: 'Hot clinker, heavy ore, scrap metal, foundry sand' },
+      { label: 'Advantage', value: 'Extreme duty, handles hot/abrasive materials, positive discharge' },
+    ]
+  },
+];
+
+const related = [
+  { name: 'Belt Conveyors', description: 'Flat, troughed & inclined belt conveyors for continuous material handling.', price: 'From ₹25,000', icon: 'ri-arrow-right-line', href: '/products/belt-conveyors' },
+  { name: 'Screw Conveyors', description: 'Inclined & vertical screw conveyors for bulk material transport.', price: 'From ₹1 Lakh', icon: 'ri-loop-right-line', href: '/products/screw-conveyors' },
+  { name: 'Bucket Elevators', description: 'Vertical bucket elevators for bulk material lifting.', price: 'Contact for Price', icon: 'ri-upload-2-line', href: '/products/bucket-elevators' },
+];
+---
+
+<Layout title={title} description={desc}>
+  <section class="product-hero">
+    <div class="container">
+      <p class="product-hero__breadcrumb">
+        <a href="/">Home</a> / <a href="/#products">Products</a> / Chain Conveyors
+      </p>
+      <h1 class="product-hero__title">Chain Conveyors</h1>
+      <p class="product-hero__desc">
+        ARSM Engineering & Technology manufactures heavy-duty chain conveyors for the most demanding material handling applications. Our drag chain (en-masse) conveyors and apron/slat conveyors provide reliable, dust-free transport of bulk materials over long distances and challenging conditions.
+      </p>
+      <p class="product-hero__desc">
+        Built with forged chains, wear-resistant troughs, and robust drives, our chain conveyors handle everything from coal and ash to hot clinker and abrasive ores. Available in horizontal, inclined, and vertical configurations with multiple feeding and discharge points.
+      </p>
+      <div class="product-hero__actions">
+        <a href="/#contact" class="btn btn--primary"><i class="ri-chat-3-line"></i> Get a Quote</a>
+        <a href="/#products" class="btn btn--outline">View All Products</a>
+      </div>
+    </div>
+    <div class="product-hero__img">
+      <img src="/images/screwconveyors.png" alt="ARSM Drag Chain Conveyor - heavy duty enclosed material handling" width="600" height="400" loading="eager" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {variants.map((v) => (
+        <div style="margin-bottom: var(--sp-6);">
+          <h2 style="font-size: var(--fs-h3); font-weight: 700; color: var(--ink); margin-bottom: var(--sp-2);">{v.name}</h2>
+          <SpecTable specs={v.specs} />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section section--subtle">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__label">Related Products</span>
+        <h2 class="section__title">You May Also Need</h2>
+      </div>
+      <div style="display:grid; grid-template-columns: repeat(3,1fr); gap: var(--sp-4);">
+        {related.map((p) => <ProductCard {...p} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band__inner">
+        <div>
+          <h2 class="cta-band__title">Need a Chain Conveyor Solution?</h2>
+          <p class="cta-band__text">We'll design the right configuration for your material, capacity, and layout.</p>
+        </div>
+        <a href="/#contact" class="btn btn--white"><i class="ri-chat-3-line"></i> Get Free Quote</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .cta-band { background: var(--grad); padding: var(--sp-10) 0; }
+  .cta-band__inner { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-6); flex-wrap: wrap; }
+  .cta-band__title { font-size: var(--fs-h2); font-weight: 800; color: #fff; margin-bottom: var(--sp-1); }
+  .cta-band__text { font-size: var(--fs-body); color: rgba(255,255,255,0.85); }
+  @media (max-width: 720px) { .cta-band__inner { flex-direction: column; text-align: center; } [style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; } }
+</style>

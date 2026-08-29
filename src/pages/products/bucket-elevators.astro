@@ -1,0 +1,116 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SpecTable from '../../components/SpecTable.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const title = 'Bucket Elevators | ARSM Engineering & Technology';
+const desc = 'Vertical bucket elevators for bulk material lifting. Manufactured in New Delhi by ARSM Engineering & Technology.';
+
+const variants = [
+  {
+    name: 'Centrifugal Discharge Bucket Elevator',
+    specs: [
+      { label: 'Type', value: 'Centrifugal Discharge' },
+      { label: 'Capacity', value: '50 – 500 TPH' },
+      { label: 'Lift Height', value: '10 m – 60 m' },
+      { label: 'Bucket Type', value: 'Pressed Steel / Malleable Iron' },
+      { label: 'Bucket Spacing', value: '200 mm – 400 mm' },
+      { label: 'Belt/Chain Speed', value: '1.5 m/s – 3.5 m/s' },
+      { label: 'Motor Power', value: '10 HP – 150 HP' },
+      { label: 'Casing', value: 'MS / SS304 with Inspection Doors' },
+      { label: 'Drive', value: 'Direct Coupled Gear Motor' },
+      { label: 'Application', value: 'Grain, cement, fertilizer, aggregate, free-flowing materials' },
+      { label: 'Advantage', value: 'High speed, high capacity, economical for free-flowing materials' },
+    ]
+  },
+  {
+    name: 'Continuous Discharge Bucket Elevator',
+    specs: [
+      { label: 'Type', value: 'Continuous / Positive Discharge' },
+      { label: 'Capacity', value: '30 – 300 TPH' },
+      { label: 'Lift Height', value: '10 m – 50 m' },
+      { label: 'Bucket Type', value: 'Deep Drawn / Fabricated Steel' },
+      { label: 'Bucket Spacing', value: '150 mm – 300 mm (continuous)' },
+      { label: 'Chain/Belt Speed', value: '0.5 m/s – 1.5 m/s' },
+      { label: 'Motor Power', value: '15 HP – 100 HP' },
+      { label: 'Casing', value: 'Heavy Duty MS with Wear Liners' },
+      { label: 'Drive', value: 'Gear Motor with Backstop' },
+      { label: 'Application', value: 'Fragile, sticky, or abrasive materials; slow speed handling' },
+      { label: 'Advantage', value: 'Gentle handling, minimal degradation, handles difficult materials' },
+    ]
+  },
+];
+
+const related = [
+  { name: 'Chain Conveyors', description: 'Drag chain & chain conveyors for heavy-duty material handling.', price: 'Contact for Price', icon: 'ri-link-line', href: '/products/chain-conveyors' },
+  { name: 'Screw Conveyors', description: 'Inclined & vertical screw conveyors for bulk material transport.', price: 'From ₹1 Lakh', icon: 'ri-loop-right-line', href: '/products/screw-conveyors' },
+  { name: 'Belt Conveyors', description: 'Flat, troughed & inclined belt conveyors for continuous material handling.', price: 'From ₹25,000', icon: 'ri-arrow-right-line', href: '/products/belt-conveyors' },
+];
+---
+
+<Layout title={title} description={desc}>
+  <section class="product-hero">
+    <div class="container">
+      <p class="product-hero__breadcrumb">
+        <a href="/">Home</a> / <a href="/#products">Products</a> / Bucket Elevators
+      </p>
+      <h1 class="product-hero__title">Bucket Elevators</h1>
+      <p class="product-hero__desc">
+        ARSM Engineering & Technology manufactures vertical bucket elevators for efficient bulk material lifting in industrial applications. Our elevators are available in centrifugal discharge (high-speed) and continuous discharge (low-speed) configurations to match your material characteristics.
+      </p>
+      <p class="product-hero__desc">
+        Designed with heavy-duty casings, precision-machined head and boot sections, and wear-resistant buckets, our bucket elevators deliver reliable vertical transport for capacities up to 500 TPH and lift heights up to 60 m. Suitable for cement, grain, fertilizer, aggregate, and challenging materials.
+      </p>
+      <div class="product-hero__actions">
+        <a href="/#contact" class="btn btn--primary"><i class="ri-chat-3-line"></i> Get a Quote</a>
+        <a href="/#products" class="btn btn--outline">View All Products</a>
+      </div>
+    </div>
+    <div class="product-hero__img">
+      <img src="/images/vertical grinding mill.png" alt="ARSM Bucket Elevator - centrifugal & continuous discharge models" width="600" height="400" loading="eager" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {variants.map((v) => (
+        <div style="margin-bottom: var(--sp-6);">
+          <h2 style="font-size: var(--fs-h3); font-weight: 700; color: var(--ink); margin-bottom: var(--sp-2);">{v.name}</h2>
+          <SpecTable specs={v.specs} />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section section--subtle">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__label">Related Products</span>
+        <h2 class="section__title">You May Also Need</h2>
+      </div>
+      <div style="display:grid; grid-template-columns: repeat(3,1fr); gap: var(--sp-4);">
+        {related.map((p) => <ProductCard {...p} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band__inner">
+        <div>
+          <h2 class="cta-band__title">Planning a Bucket Elevator?</h2>
+          <p class="cta-band__text">Tell us your material, capacity, and lift height requirements.</p>
+        </div>
+        <a href="/#contact" class="btn btn--white"><i class="ri-chat-3-line"></i> Get Free Quote</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .cta-band { background: var(--grad); padding: var(--sp-10) 0; }
+  .cta-band__inner { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-6); flex-wrap: wrap; }
+  .cta-band__title { font-size: var(--fs-h2); font-weight: 800; color: #fff; margin-bottom: var(--sp-1); }
+  .cta-band__text { font-size: var(--fs-body); color: rgba(255,255,255,0.85); }
+  @media (max-width: 720px) { .cta-band__inner { flex-direction: column; text-align: center; } [style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; } }
+</style>

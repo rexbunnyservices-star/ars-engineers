@@ -1,6 +1,6 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
   <rect width="64" height="64" rx="12" fill="#0f2147" stroke="#1a56db" stroke-width="1.5"/>
-  <text x="6" y="44" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="30" fill="#f8f7f4">ARS</text>
+  <text x="5" y="43" font-family="Inter,system-ui,sans-serif" font-weight="800" font-size="24" fill="#f8f7f4">ARSM</text>
   <g transform="translate(46,6)">
     <circle cx="8" cy="8" r="7" fill="none" stroke="#d4a843" stroke-width="2"/>
     <circle cx="8" cy="8" r="2.5" fill="#d4a843"/>

@@ -7,13 +7,8 @@ const year = new Date().getFullYear();
     <div class="footer__grid">
       <div class="footer__brand">
         <div class="footer__logo">
-          <svg width="28" height="28" viewBox="0 0 64 64" fill="none">
-            <rect width="64" height="64" rx="12" fill="#0f2147"/>
-            <text x="8" y="44" font-family="Inter,sans-serif" font-weight="800" font-size="30" fill="#f8f7f4">ARS</text>
-            <circle cx="54" cy="16" r="6" fill="none" stroke="#d4a843" stroke-width="2"/>
-            <circle cx="54" cy="16" r="2" fill="#d4a843"/>
-          </svg>
-          <span>ARS Engineers</span>
+          <img src="/images/arsm-logo.jpg" alt="ARSM Engineering & Technology" class="footer__logo-img" width="88" height="31" />
+          <span>ARSM Engineering & Technology</span>
         </div>
         <p class="footer__tagline">Precision Engineering<br/>Since 2014</p>
       </div>
@@ -30,24 +25,28 @@ const year = new Date().getFullYear();
         <h4 class="footer__heading">Products</h4>
         <a href="/products/belt-conveyors" class="footer__link">Belt Conveyors</a>
         <a href="/products/jaw-crushers" class="footer__link">Jaw Crushers</a>
+        <a href="/products/vibrating-screens" class="footer__link">Vibrating Screens</a>
+        <a href="/products/screw-conveyors" class="footer__link">Screw Conveyors</a>
         <a href="/products/crushing-plants" class="footer__link">Crushing Plants</a>
         <a href="/products/coal-crushers" class="footer__link">Coal Crushers</a>
         <a href="/products/hammer-crushers" class="footer__link">Hammer Crushers</a>
         <a href="/products/roll-crushers" class="footer__link">Roll Crushers</a>
-        <a href="/products/screw-conveyors" class="footer__link">Screw Conveyors</a>
-        <a href="/products/vibrating-screens" class="footer__link">Vibrating Screens</a>
+        <a href="/products/grinding-mills" class="footer__link">Grinding Mills</a>
+        <a href="/products/sand-washing-plants" class="footer__link">Sand Washing Plants</a>
+        <a href="/products/chain-conveyors" class="footer__link">Chain Conveyors</a>
+        <a href="/products/bucket-elevators" class="footer__link">Bucket Elevators</a>
       </div>
 
       <div class="footer__col">
         <h4 class="footer__heading">Contact</h4>
         <p class="footer__text">I.P. Extension, New Delhi</p>
         <p class="footer__text">Delhi, India</p>
-        <a href="mailto:info@arsengineers.in" class="footer__link">info@arsengineers.in</a>
+        <a href="mailto:arsmengineers@gmail.com" class="footer__link">arsmengineers@gmail.com</a>
       </div>
     </div>
 
     <div class="footer__bottom">
-      <p>&copy; {year} ARS Engineers & Technology. All rights reserved.</p>
+      <p>&copy; {year} ARSM Engineering & Technology. All rights reserved.</p>
       <p>GST Registered &middot; Payment: Cash, Card, Cheque, Online</p>
     </div>
   </div>
@@ -75,6 +74,15 @@ const year = new Date().getFullYear();
     font-size: 1.1rem;
     color: #fff;
     margin-bottom: var(--sp-2);
+  }
+
+  .footer__logo-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    padding: 3px;
+    background: #ffffff;
   }
 
   .footer__tagline {

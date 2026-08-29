@@ -1,0 +1,114 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SpecTable from '../../components/SpecTable.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const title = 'Sand Washing Plants | ARSM Engineering & Technology';
+const desc = 'Complete sand washing & screening plants for manufactured sand. Manufactured in New Delhi by ARSM Engineering & Technology.';
+
+const variants = [
+  {
+    name: 'Sand Washing Plant (Wheel Type)',
+    specs: [
+      { label: 'Type', value: 'Wheel / Bucket Wheel Washer' },
+      { label: 'Capacity', value: '20 – 100 TPH' },
+      { label: 'Feed Size', value: '0 – 10 mm' },
+      { label: 'Wheel Diameter', value: '2000 mm – 3500 mm' },
+      { label: 'Motor Power', value: '7.5 HP – 30 HP' },
+      { label: 'Water Consumption', value: '50 – 200 m³/hr' },
+      { label: 'Construction', value: 'Heavy Duty MS with Anti-Corrosion Coating' },
+      { label: 'Dewatering Screen', value: 'High-Frequency Polyurethane Screen' },
+      { label: 'Application', value: 'Manufactured sand, river sand, quarry dust washing' },
+      { label: 'Advantage', value: 'Low fine sand loss, high washing efficiency, compact' },
+    ]
+  },
+  {
+    name: 'Sand Washing Plant (Screw Type)',
+    specs: [
+      { label: 'Type', value: 'Spiral / Screw Sand Washer' },
+      { label: 'Capacity', value: '30 – 150 TPH' },
+      { label: 'Feed Size', value: '0 – 10 mm' },
+      { label: 'Screw Diameter', value: '500 mm – 1200 mm' },
+      { label: 'Motor Power', value: '15 HP – 50 HP' },
+      { label: 'Water Consumption', value: '80 – 300 m³/hr' },
+      { label: 'Construction', value: 'Heavy Duty MS / SS304 Option' },
+      { label: 'Trough', value: 'U-Shaped with Wear-Resistant Lining' },
+      { label: 'Application', value: 'Coarse sand, gravel, aggregate washing & dewatering' },
+      { label: 'Advantage', value: 'High capacity, handles larger particles, robust' },
+    ]
+  },
+];
+
+const related = [
+  { name: 'Vibrating Screens', description: 'Multi-deck screens for efficient material classification and sizing.', price: 'From ₹1 Lakh', icon: 'ri-layout-grid-line', href: '/products/vibrating-screens' },
+  { name: 'Belt Conveyors', description: 'Flat, troughed & inclined belt conveyors for continuous material handling.', price: 'From ₹25,000', icon: 'ri-arrow-right-line', href: '/products/belt-conveyors' },
+  { name: 'Crushing Plants', description: 'Complete mobile, skid-mounted & stationary crushing plant solutions.', price: 'From ₹5 Lakh', icon: 'ri-building-2-line', href: '/products/crushing-plants' },
+];
+---
+
+<Layout title={title} description={desc}>
+  <section class="product-hero">
+    <div class="container">
+      <p class="product-hero__breadcrumb">
+        <a href="/">Home</a> / <a href="/#products">Products</a> / Sand Washing Plants
+      </p>
+      <h1 class="product-hero__title">Sand Washing Plants</h1>
+      <p class="product-hero__desc">
+        ARSM Engineering & Technology manufactures complete sand washing and screening plants for producing high-quality manufactured sand (M-sand) and washed river sand. Our plants combine washing, dewatering, and screening in a single compact unit.
+      </p>
+      <p class="product-hero__desc">
+        Available in wheel/bucket type and spiral/screw type configurations, our sand washing plants effectively remove clay, silt, and impurities while recovering maximum fine sand. Ideal for construction sand, concrete production, and plaster sand applications.
+      </p>
+      <div class="product-hero__actions">
+        <a href="/#contact" class="btn btn--primary"><i class="ri-chat-3-line"></i> Get a Quote</a>
+        <a href="/#products" class="btn btn--outline">View All Products</a>
+      </div>
+    </div>
+    <div class="product-hero__img">
+      <img src="/images/sand washing machine.png" alt="ARSM Sand Washing Plant - wheel & screw type for manufactured sand" width="600" height="400" loading="eager" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {variants.map((v) => (
+        <div style="margin-bottom: var(--sp-6);">
+          <h2 style="font-size: var(--fs-h3); font-weight: 700; color: var(--ink); margin-bottom: var(--sp-2);">{v.name}</h2>
+          <SpecTable specs={v.specs} />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section section--subtle">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__label">Related Products</span>
+        <h2 class="section__title">You May Also Need</h2>
+      </div>
+      <div style="display:grid; grid-template-columns: repeat(3,1fr); gap: var(--sp-4);">
+        {related.map((p) => <ProductCard {...p} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band__inner">
+        <div>
+          <h2 class="cta-band__title">Planning a Sand Washing Plant?</h2>
+          <p class="cta-band__text">Tell us your feed material and required sand specifications.</p>
+        </div>
+        <a href="/#contact" class="btn btn--white"><i class="ri-chat-3-line"></i> Get Free Quote</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .cta-band { background: var(--grad); padding: var(--sp-10) 0; }
+  .cta-band__inner { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-6); flex-wrap: wrap; }
+  .cta-band__title { font-size: var(--fs-h2); font-weight: 800; color: #fff; margin-bottom: var(--sp-1); }
+  .cta-band__text { font-size: var(--fs-body); color: rgba(255,255,255,0.85); }
+  @media (max-width: 720px) { .cta-band__inner { flex-direction: column; text-align: center; } [style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; } }
+</style>

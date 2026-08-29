@@ -1,0 +1,114 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SpecTable from '../../components/SpecTable.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+const title = 'Grinding Mills | ARSM Engineering & Technology';
+const desc = 'Vertical roller mills & ball mills for powder grinding applications. Manufactured in New Delhi by ARSM Engineering & Technology.';
+
+const variants = [
+  {
+    name: 'Vertical Roller Grinding Mill',
+    specs: [
+      { label: 'Type', value: 'Vertical Roller Mill' },
+      { label: 'Capacity', value: '10 – 50 TPH' },
+      { label: 'Feed Size', value: 'Up to 50 mm' },
+      { label: 'Output Fineness', value: '200 – 400 Mesh' },
+      { label: 'Motor Power', value: '75 HP – 300 HP' },
+      { label: 'Grinding Rollers', value: '3 – 4 High-Chrome Rollers' },
+      { label: 'Grinding Table', value: 'Segmented Cast Iron / Steel' },
+      { label: 'Classifier', value: 'High-Efficiency Dynamic Classifier' },
+      { label: 'Application', value: 'Cement, coal, limestone, gypsum, slag grinding' },
+      { label: 'Advantage', value: 'Low energy consumption, compact design, high drying capacity' },
+    ]
+  },
+  {
+    name: 'Vertical Grinding Mill',
+    specs: [
+      { label: 'Type', value: 'Vertical Grinding Mill' },
+      { label: 'Capacity', value: '5 – 30 TPH' },
+      { label: 'Feed Size', value: 'Up to 30 mm' },
+      { label: 'Output Fineness', value: '100 – 325 Mesh' },
+      { label: 'Motor Power', value: '50 HP – 200 HP' },
+      { label: 'Construction', value: 'Heavy Duty MS Frame' },
+      { label: 'Grinding Media', value: 'Steel Balls / Ceramic Balls' },
+      { label: 'Lining', value: 'Manganese Steel / Rubber' },
+      { label: 'Application', value: 'Minerals, ores, chemicals, ceramics grinding' },
+      { label: 'Advantage', value: 'Versatile, reliable, easy maintenance' },
+    ]
+  },
+];
+
+const related = [
+  { name: 'Crushing Plants', description: 'Complete mobile, skid-mounted & stationary crushing plant solutions.', price: 'From ₹5 Lakh', icon: 'ri-building-2-line', href: '/products/crushing-plants' },
+  { name: 'Belt Conveyors', description: 'Flat, troughed & inclined belt conveyors for continuous material handling.', price: 'From ₹25,000', icon: 'ri-arrow-right-line', href: '/products/belt-conveyors' },
+  { name: 'Screw Conveyors', description: 'Inclined & vertical screw conveyors for bulk material transport.', price: 'From ₹1 Lakh', icon: 'ri-loop-right-line', href: '/products/screw-conveyors' },
+];
+---
+
+<Layout title={title} description={desc}>
+  <section class="product-hero">
+    <div class="container">
+      <p class="product-hero__breadcrumb">
+        <a href="/">Home</a> / <a href="/#products">Products</a> / Grinding Mills
+      </p>
+      <h1 class="product-hero__title">Grinding Mills</h1>
+      <p class="product-hero__desc">
+        ARSM Engineering & Technology manufactures high-efficiency grinding mills for fine and ultra-fine powder production. Our vertical roller mills and vertical grinding mills are engineered for low energy consumption, high throughput, and consistent particle size distribution.
+      </p>
+      <p class="product-hero__desc">
+        Suitable for grinding cement clinker, coal, limestone, gypsum, slag, and various minerals, our mills feature advanced classifiers for precise fineness control and robust construction for continuous operation in demanding industrial environments.
+      </p>
+      <div class="product-hero__actions">
+        <a href="/#contact" class="btn btn--primary"><i class="ri-chat-3-line"></i> Get a Quote</a>
+        <a href="/#products" class="btn btn--outline">View All Products</a>
+      </div>
+    </div>
+    <div class="product-hero__img">
+      <img src="/images/vertical roller grinding mill.png" alt="ARSM Vertical Roller Grinding Mill - high efficiency powder grinding" width="600" height="400" loading="eager" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {variants.map((v) => (
+        <div style="margin-bottom: var(--sp-6);">
+          <h2 style="font-size: var(--fs-h3); font-weight: 700; color: var(--ink); margin-bottom: var(--sp-2);">{v.name}</h2>
+          <SpecTable specs={v.specs} />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="section section--subtle">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__label">Related Products</span>
+        <h2 class="section__title">You May Also Need</h2>
+      </div>
+      <div style="display:grid; grid-template-columns: repeat(3,1fr); gap: var(--sp-4);">
+        {related.map((p) => <ProductCard {...p} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <div class="cta-band__inner">
+        <div>
+          <h2 class="cta-band__title">Need a Grinding Mill Solution?</h2>
+          <p class="cta-band__text">We'll help you select the right mill for your material and fineness requirements.</p>
+        </div>
+        <a href="/#contact" class="btn btn--white"><i class="ri-chat-3-line"></i> Get Free Quote</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .cta-band { background: var(--grad); padding: var(--sp-10) 0; }
+  .cta-band__inner { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-6); flex-wrap: wrap; }
+  .cta-band__title { font-size: var(--fs-h2); font-weight: 800; color: #fff; margin-bottom: var(--sp-1); }
+  .cta-band__text { font-size: var(--fs-body); color: rgba(255,255,255,0.85); }
+  @media (max-width: 720px) { .cta-band__inner { flex-direction: column; text-align: center; } [style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; } }
+</style>

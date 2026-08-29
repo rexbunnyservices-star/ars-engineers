@@ -1,9 +1,9 @@
-/* ═══════════════════════════════════════════════════════════
-   ARS Engineers & Technology — Design System
-   Light theme · Deep navy + warm gold · Premium industrial
-   ═══════════════════════════════════════════════════════════ */
+﻿/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   ARS Engineers & Technology â€” Design System
+   Light theme Â· Deep navy + warm gold Â· Premium industrial
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
-/* ── Reset & Base ──────────────────────────────────────── */
+/* â”€â”€ Reset & Base â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
@@ -28,9 +28,9 @@ ul, ol { list-style: none; }
 button { cursor: pointer; border: none; background: none; font: inherit; color: inherit; }
 input, textarea, select { font: inherit; color: inherit; }
 
-/* ── Design Tokens ─────────────────────────────────────── */
+/* â”€â”€ Design Tokens â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 :root {
-  /* Canvas — warm off-white */
+  /* Canvas â€” warm off-white */
   --bg: #f8f7f4;
   --bg-card: #ffffff;
   --bg-subtle: #f0ede6;
@@ -42,13 +42,13 @@ input, textarea, select { font: inherit; color: inherit; }
   --muted: #8896a6;
   --white: #ffffff;
 
-  /* Accent — royal blue */
-  --accent: #1a56db;
-  --accent-hover: #1448b0;
-  --accent-light: rgba(26, 86, 219, 0.08);
-  --accent-glow: rgba(26, 86, 219, 0.15);
+  /* Accent â€” royal blue */
+  --accent: #c89b3c;
+  --accent-hover: #b3862f;
+  --accent-light: rgba(212, 168, 67, 0.12);
+  --accent-glow: rgba(212, 168, 67, 0.18);
 
-  /* Secondary accent — warm gold */
+  /* Secondary accent â€” warm gold */
   --gold: #d4a843;
   --gold-hover: #c89b3c;
   --gold-light: rgba(212, 168, 67, 0.12);
@@ -60,14 +60,14 @@ input, textarea, select { font: inherit; color: inherit; }
 
   /* Surfaces */
   --border: rgba(15, 33, 71, 0.08);
-  --border-accent: rgba(26, 86, 219, 0.3);
+  --border-accent: rgba(212, 168, 67, 0.3);
   --shadow-sm: 0 1px 3px rgba(15,33,71,0.08);
   --shadow-md: 0 4px 16px rgba(15,33,71,0.1);
   --shadow-lg: 0 8px 32px rgba(15,33,71,0.12);
-  --shadow-accent: 0 4px 24px rgba(26,86,219,0.15);
+  --shadow-accent: 0 4px 24px rgba(212,168,67,0.2);
 
   /* Gradient */
-  --grad: linear-gradient(135deg, #0f2147, #1a56db);
+  --grad: linear-gradient(135deg, #0f2147, #c89b3c);
   --grad-gold: linear-gradient(135deg, #d4a843, #c89b3c);
 
   /* Typography */
@@ -104,7 +104,7 @@ input, textarea, select { font: inherit; color: inherit; }
   --duration: 0.25s;
 }
 
-/* ── Container ─────────────────────────────────────────── */
+/* â”€â”€ Container â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .container {
   width: 100%;
   max-width: var(--container);
@@ -116,7 +116,7 @@ input, textarea, select { font: inherit; color: inherit; }
   max-width: var(--container-narrow);
 }
 
-/* ── Section ───────────────────────────────────────────── */
+/* â”€â”€ Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .section {
   padding: var(--sp-16) 0;
   position: relative;
@@ -193,7 +193,7 @@ input, textarea, select { font: inherit; color: inherit; }
   color: rgba(255,255,255,0.04);
 }
 
-/* ── Grid ──────────────────────────────────────────────── */
+/* â”€â”€ Grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .grid {
   display: grid;
   gap: var(--sp-4);
@@ -203,7 +203,7 @@ input, textarea, select { font: inherit; color: inherit; }
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
 .grid-4 { grid-template-columns: repeat(4, 1fr); }
 
-/* ── Cards ─────────────────────────────────────────────── */
+/* â”€â”€ Cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -275,7 +275,7 @@ input, textarea, select { font: inherit; color: inherit; }
 
 .card__link:hover::after { transform: translateX(2px); }
 
-/* ── Buttons ───────────────────────────────────────────── */
+/* â”€â”€ Buttons â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -339,7 +339,7 @@ input, textarea, select { font: inherit; color: inherit; }
   font-size: var(--fs-small);
 }
 
-/* ── Progress Bar ──────────────────────────────────────── */
+/* â”€â”€ Progress Bar â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .progress-bar {
   position: fixed;
   top: 0;
@@ -358,7 +358,7 @@ input, textarea, select { font: inherit; color: inherit; }
   will-change: transform;
 }
 
-/* ── Navigation ────────────────────────────────────────── */
+/* â”€â”€ Navigation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .nav {
   position: fixed;
   top: 0;
@@ -400,9 +400,14 @@ input, textarea, select { font: inherit; color: inherit; }
   z-index: 10;
 }
 
-.nav__logo svg {
-  width: 36px;
-  height: 36px;
+.nav__logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 3px;
+  box-shadow: 0 1px 4px rgba(15,33,71,0.12);
 }
 
 .nav__logo-text span {
@@ -501,7 +506,7 @@ input, textarea, select { font: inherit; color: inherit; }
   border-bottom: 1px solid var(--border);
 }
 
-/* ── Forms ─────────────────────────────────────────────── */
+/* â”€â”€ Forms â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .form-group {
   margin-bottom: var(--sp-3);
 }
@@ -559,7 +564,7 @@ input, textarea, select { font: inherit; color: inherit; }
   color: var(--ink);
 }
 
-/* ── Badge / Chip ──────────────────────────────────────── */
+/* â”€â”€ Badge / Chip â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -583,7 +588,7 @@ input, textarea, select { font: inherit; color: inherit; }
   font-size: 1rem;
 }
 
-/* ── Stat Card ─────────────────────────────────────────── */
+/* â”€â”€ Stat Card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .stat {
   text-align: center;
   padding: var(--sp-4);
@@ -603,7 +608,7 @@ input, textarea, select { font: inherit; color: inherit; }
   color: var(--muted);
 }
 
-/* ── Product Detail ────────────────────────────────────── */
+/* â”€â”€ Product Detail â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .product-hero {
   padding: calc(var(--nav-height) + var(--sp-10)) 0 var(--sp-8);
   background: var(--bg-subtle);
@@ -708,14 +713,14 @@ input, textarea, select { font: inherit; color: inherit; }
   background: var(--accent-light);
 }
 
-/* ── Reveal Animation ──────────────────────────────────── */
+/* â”€â”€ Reveal Animation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 [data-reveal] {
   opacity: 0;
   transform: translateY(28px);
   will-change: transform, opacity;
 }
 
-/* ── Responsive ────────────────────────────────────────── */
+/* â”€â”€ Responsive â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (max-width: 960px) {
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
@@ -756,7 +761,7 @@ input, textarea, select { font: inherit; color: inherit; }
   }
 }
 
-/* ── Accessibility ─────────────────────────────────────── */
+/* â”€â”€ Accessibility â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -770,7 +775,7 @@ input, textarea, select { font: inherit; color: inherit; }
   }
 }
 
-/* ── Print ─────────────────────────────────────────────── */
+/* â”€â”€ Print â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media print {
   .nav, .progress-bar, .btn { display: none; }
   body { color: #000; background: #fff; }
