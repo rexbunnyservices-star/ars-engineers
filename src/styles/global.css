@@ -34,24 +34,24 @@ input, textarea, select { font: inherit; color: inherit; }
   --bg: #f8f7f4;
   --bg-card: #ffffff;
   --bg-subtle: #f0ede6;
-  --bg-dark: #0f2147;
+  --bg-dark: #03045e;
 
   /* Text */
-  --ink: #0f2147;
+  --ink: #03045e;
   --body: #4a5568;
   --muted: #8896a6;
   --white: #ffffff;
 
-  /* Accent â€” royal blue */
-  --accent: #c89b3c;
-  --accent-hover: #b3862f;
-  --accent-light: rgba(212, 168, 67, 0.12);
-  --accent-glow: rgba(212, 168, 67, 0.18);
+  /* Accent — ocean blue */
+  --accent: #0078b7;
+  --accent-hover: #00a8d0;
+  --accent-light: rgba(0, 180, 215, 0.12);
+  --accent-glow: rgba(0, 180, 215, 0.18);
 
-  /* Secondary accent â€” warm gold */
-  --gold: #d4a843;
-  --gold-hover: #c89b3c;
-  --gold-light: rgba(212, 168, 67, 0.12);
+  /* Secondary accent — bright cyan */
+  --gold: #00b4d7;
+  --gold-hover: #0096c4;
+  --gold-light: rgba(0, 180, 215, 0.12);
 
   /* Semantic */
   --success: #16a34a;
@@ -59,16 +59,16 @@ input, textarea, select { font: inherit; color: inherit; }
   --warning: #d97706;
 
   /* Surfaces */
-  --border: rgba(15, 33, 71, 0.08);
-  --border-accent: rgba(212, 168, 67, 0.3);
-  --shadow-sm: 0 1px 3px rgba(15,33,71,0.08);
-  --shadow-md: 0 4px 16px rgba(15,33,71,0.1);
-  --shadow-lg: 0 8px 32px rgba(15,33,71,0.12);
-  --shadow-accent: 0 4px 24px rgba(212,168,67,0.2);
+  --border: rgba(3, 4, 94, 0.08);
+  --border-accent: rgba(0, 180, 215, 0.3);
+  --shadow-sm: 0 1px 3px rgba(3,4,94,0.08);
+  --shadow-md: 0 4px 16px rgba(3,4,94,0.1);
+  --shadow-lg: 0 8px 32px rgba(3,4,94,0.12);
+  --shadow-accent: 0 4px 24px rgba(0,180,215,0.25);
 
   /* Gradient */
-  --grad: linear-gradient(135deg, #0f2147, #c89b3c);
-  --grad-gold: linear-gradient(135deg, #d4a843, #c89b3c);
+  --grad: linear-gradient(135deg, #03045e, #0078b7);
+  --grad-gold: linear-gradient(135deg, #00b4d7, #0078b7);
 
   /* Typography */
   --fs-hero: clamp(2.4rem, 5.5vw, 4.2rem);
@@ -183,7 +183,7 @@ input, textarea, select { font: inherit; color: inherit; }
   right: var(--sp-4);
   font-size: clamp(4rem, 10vw, 8rem);
   font-weight: 900;
-  color: rgba(15, 33, 71, 0.03);
+  color: rgba(3, 4, 94, 0.03);
   line-height: 1;
   pointer-events: none;
   z-index: 0;
@@ -377,7 +377,7 @@ input, textarea, select { font: inherit; color: inherit; }
   background: rgba(248, 247, 244, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 1px 12px rgba(15,33,71,0.08);
+  box-shadow: 0 1px 12px rgba(3,4,94,0.08);
 }
 
 .nav__inner {
@@ -401,13 +401,9 @@ input, textarea, select { font: inherit; color: inherit; }
 }
 
 .nav__logo-img {
-  height: 40px;
+  height: 44px;
   width: auto;
   object-fit: contain;
-  border-radius: 8px;
-  background: #ffffff;
-  padding: 3px;
-  box-shadow: 0 1px 4px rgba(15,33,71,0.12);
 }
 
 .nav__logo-text span {
