@@ -1,6 +1,14 @@
 ---
 const products = [
   {
+    name: 'Coal Hammer Mill',
+    desc: 'High-capacity hammer mills for coal crushing & fine pulverizing, built to client specifications.',
+    price: 'Contact for Price',
+    icon: 'ri-hammer-line',
+    href: '/products/coal-hammer-mill',
+    image: '/images/coal-hammer-mill.jpg',
+  },
+  {
     name: 'Belt Conveyors',
     desc: 'Flat, troughed & inclined belt conveyors for continuous material handling.',
     price: 'From ₹25,000',
@@ -80,22 +88,6 @@ const products = [
     href: '/products/sand-washing-plants',
     image: '/images/sand washing machine.png',
   },
-  {
-    name: 'Chain Conveyors',
-    desc: 'Drag chain & chain conveyors for heavy-duty material handling.',
-    price: 'Contact for Price',
-    icon: 'ri-link-line',
-    href: '/products/chain-conveyors',
-    image: '/images/screwconveyors.png',
-  },
-  {
-    name: 'Bucket Elevators',
-    desc: 'Vertical bucket elevators for bulk material lifting.',
-    price: 'Contact for Price',
-    icon: 'ri-upload-2-line',
-    href: '/products/bucket-elevators',
-    image: '/images/vertical grinding mill.png',
-  },
 ];
 ---
 
@@ -111,7 +103,7 @@ const products = [
       {products.map((p) => (
         <a href={p.href} class="products__card">
           <div class="products__card-img">
-            <img src={p.image} alt={p.name} loading="lazy" width="400" height="300" />
+            <img src={p.image} alt={`ARSM ${p.name}`} loading="lazy" width="400" height="300" />
           </div>
           <h3 class="products__card-name">{p.name}</h3>
           <p class="products__card-desc">{p.desc}</p>
@@ -144,7 +136,7 @@ const products = [
 
   .products__card:hover {
     transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 12px 34px rgba(0,120,183,0.16), 0 0 0 1px rgba(0,180,215,0.25);
     border-color: var(--border-accent);
   }
 

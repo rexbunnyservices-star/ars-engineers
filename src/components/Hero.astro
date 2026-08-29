@@ -1,17 +1,18 @@
 ﻿---
 ---
 <section class="section hero-section" id="home">
+  <div class="hero-section__grid"></div>
   <div class="container hero__inner">
     <div class="hero__content" data-reveal>
       <div class="hero__badges">
-        <span class="badge badge--accent"><i class="ri-shield-check-line"></i> GST Registered</span>
-        <span class="badge"><i class="ri-map-pin-line"></i> New Delhi, India</span>
+        <span class="hero__badge"><i class="ri-shield-check-line"></i> GST Registered</span>
+        <span class="hero__badge"><i class="ri-map-pin-line"></i> New Delhi, India</span>
       </div>
-      <h1 class="hero__title">Precision Crushing, Conveying<br/>& Screening Solutions</h1>
-      <p class="hero__text">Engineering reliable material handling equipment since 2014. Trusted by 100+ businesses across India. Manufacturer of belt conveyors, crushers, screens, grinding mills & complete plants.</p>
+      <h1 class="hero__title">Precision Crushing, Conveying<br/>&amp; Screening Solutions</h1>
+      <p class="hero__text">Engineering reliable material handling equipment since 2014. Trusted by 100+ businesses across India. Manufacturer of belt conveyors, crushers, screens, grinding mills &amp; complete plants.</p>
       <div class="hero__ctas">
         <a href="#contact" class="btn btn--primary"><i class="ri-chat-3-line"></i> Get Free Quote</a>
-        <a href="#products" class="btn btn--outline">Explore Products</a>
+        <a href="#products" class="btn btn--outline btn--light">Explore Products</a>
       </div>
       <div class="hero__trust">
         <span class="hero__trust-chip">10+ Years</span>
@@ -22,16 +23,24 @@
     </div>
 
     <div class="hero__visual" data-reveal>
-      <div class="hero__photo">
-        <img src="/images/crushing-plant.png" alt="ARSM Engineers crushing plant" width="500" height="500" />
+      <div class="hero__photo-frame">
+        <div class="hero__photo">
+          <img src="/images/crushing-plant.png" alt="ARSM crushing plant manufactured in New Delhi" width="500" height="500" loading="eager" />
+        </div>
       </div>
       <div class="hero__card hero__card--secondary">
-        <div class="hero__card-icon hero__card-icon--sm"><i class="ri-arrow-right-up-line"></i></div>
-        <span>Pan-India Logistics</span>
+        <div class="hero__card-icon hero__card-icon--sm"><i class="ri-road-map-line"></i></div>
+        <div>
+          <strong>Pan-India Logistics</strong>
+          <span>Delivered across the country</span>
+        </div>
       </div>
       <div class="hero__card hero__card--accent">
         <div class="hero__card-icon hero__card-icon--sm hero__card-icon--white"><i class="ri-time-line"></i></div>
-        <span>Fast Response</span>
+        <div>
+          <strong>Fast Response</strong>
+          <span>Quotes within 24 hours</span>
+        </div>
       </div>
     </div>
   </div>
@@ -40,20 +49,26 @@
 
 <style>
   section.hero-section {
-    background: linear-gradient(170deg, #f8f7f4 0%, #f0ede6 40%, #f8f7f4 100%);
+    background: radial-gradient(1200px 600px at 75% -10%, rgba(0,180,215,0.16) 0%, transparent 60%),
+                radial-gradient(900px 500px at 10% 110%, rgba(0,120,183,0.20) 0%, transparent 55%),
+                linear-gradient(160deg, #020645 0%, #03045e 45%, #03206b 100%);
+    color: var(--white);
     position: relative;
     overflow: hidden;
   }
 
+  /* Blueprint grid overlay */
   section.hero-section::before {
     content: '';
     position: absolute;
-    top: 0;
-    right: -10%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(26,86,219,0.05) 0%, transparent 70%);
+    inset: 0;
+    background:
+      linear-gradient(rgba(0,180,215,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,180,215,0.07) 1px, transparent 1px);
+    background-size: 56px 56px;
     pointer-events: none;
+    mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
   }
 
   section.hero-section::after {
@@ -63,12 +78,12 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(26,86,219,0.15), transparent);
+    background: linear-gradient(90deg, transparent, rgba(0,180,215,0.5), transparent);
   }
 
   .hero__inner {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.05fr 0.95fr;
     gap: var(--sp-8);
     align-items: center;
     min-height: calc(100vh - var(--nav-height));
@@ -79,10 +94,25 @@
 
   .hero__badges { display: flex; gap: var(--sp-2); margin-bottom: var(--sp-4); flex-wrap: wrap; }
 
+  .hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(0,180,215,0.35);
+    border-radius: 100px;
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    color: #bfe9ff;
+    letter-spacing: 0.02em;
+  }
+  .hero__badge i { color: var(--gold); font-size: 1rem; }
+
   .hero__title {
     font-size: var(--fs-hero);
     font-weight: 900;
-    color: var(--ink);
+    color: #fff;
     line-height: 1.08;
     margin-bottom: var(--sp-3);
     letter-spacing: -0.02em;
@@ -93,50 +123,70 @@
     display: block;
     width: 80px;
     height: 3px;
-    background: var(--gold);
-    border-radius: 1px;
+    background: linear-gradient(90deg, var(--gold), var(--accent));
+    border-radius: 2px;
     margin-top: var(--sp-3);
-    box-shadow: 0 0 12px rgba(0,180,215,0.3);
+    box-shadow: 0 0 16px rgba(0,180,215,0.6);
   }
 
   .hero__text {
     font-size: clamp(1rem, 1.3vw, 1.15rem);
-    color: var(--body);
-    max-width: 500px;
+    color: rgba(255,255,255,0.82);
+    max-width: 520px;
     line-height: 1.7;
     margin-bottom: var(--sp-4);
   }
 
   .hero__ctas { display: flex; gap: var(--sp-2); margin-bottom: var(--sp-6); flex-wrap: wrap; }
+
+  .btn--light {
+    border: 2px solid rgba(255,255,255,0.45);
+    color: #fff;
+    background: transparent;
+  }
+  .btn--light:hover {
+    background: rgba(255,255,255,0.12);
+    border-color: var(--white);
+    color: #fff;
+  }
+
   .hero__trust { display: flex; gap: var(--sp-2); flex-wrap: wrap; }
 
   .hero__trust-chip {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 6px 14px;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
+    padding: 7px 15px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.16);
     border-radius: 100px;
     font-size: 0.75rem;
     font-weight: 600;
-    color: var(--body);
-    box-shadow: var(--shadow-sm);
+    color: rgba(255,255,255,0.85);
   }
   .hero__trust-chip i { color: var(--gold); }
 
-  .hero__visual { position: relative; height: 420px; }
+  .hero__visual { position: relative; min-height: 460px; }
 
-  .hero__photo {
+  .hero__photo-frame {
     position: absolute;
     top: 0;
-    right: 0;
-    width: 380px;
-    height: 340px;
-    border-radius: var(--radius);
+    right: 6%;
+    width: 400px;
+    height: 360px;
+    padding: 12px;
+    background: linear-gradient(160deg, rgba(0,180,215,0.25), rgba(0,120,183,0.10));
+    border: 1px solid rgba(0,180,215,0.35);
+    border-radius: 20px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+  }
+
+  .hero__photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
     overflow: hidden;
-    border: 2px solid var(--border);
-    box-shadow: var(--shadow-lg);
+    background: var(--bg-subtle);
   }
 
   .hero__photo img {
@@ -147,29 +197,36 @@
 
   .hero__card {
     position: absolute;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: var(--sp-2);
+    background: rgba(2,20,70,0.85);
+    border: 1px solid rgba(0,180,215,0.3);
     border-radius: var(--radius);
-    padding: var(--sp-4);
-    box-shadow: var(--shadow-md);
+    padding: var(--sp-3) var(--sp-4);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    backdrop-filter: blur(10px);
   }
-  .hero__card--main h3 { font-size: var(--fs-h3); font-weight: 700; color: var(--ink); margin-bottom: var(--sp-1); }
-  .hero__card--main p { font-size: var(--fs-small); color: var(--body); }
-  .hero__card--secondary { bottom: 60px; left: 0; display: flex; align-items: center; gap: var(--sp-2); padding: 14px 20px; }
-  .hero__card--secondary span { font-size: var(--fs-small); font-weight: 600; color: var(--ink); }
-  .hero__card--accent { bottom: 0; right: 40px; background: var(--gold); border-color: var(--gold); display: flex; align-items: center; gap: var(--sp-2); padding: 14px 20px; box-shadow: 0 4px 24px rgba(0,180,215,0.3); }
-  .hero__card--accent span { font-size: var(--fs-small); font-weight: 600; color: #fff; }
+  .hero__card strong { display: block; font-size: 0.9rem; font-weight: 700; color: #fff; }
+  .hero__card div > span { font-size: 0.72rem; color: rgba(255,255,255,0.7); }
 
-  .hero__card-icon { width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; background: var(--accent-light); border-radius: var(--radius-sm); color: var(--accent); font-size: 1.6rem; margin-bottom: var(--sp-3); }
-  .hero__card-icon--sm { width: 36px; height: 36px; font-size: 1.1rem; margin-bottom: 0; }
-  .hero__card-icon--white { background: rgba(255,255,255,0.25); color: #fff; }
+  .hero__card--secondary { bottom: 90px; left: 0; }
+  .hero__card--accent {
+    bottom: 20px; right: 0;
+    background: linear-gradient(135deg, #0078b7, #00a8d0);
+    border-color: transparent;
+  }
+  .hero__card--accent div > span { color: rgba(255,255,255,0.9); }
+
+  .hero__card-icon { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--accent-light); border-radius: var(--radius-sm); color: var(--gold); font-size: 1.2rem; }
+  .hero__card-icon--white { background: rgba(255,255,255,0.22); color: #fff; }
 
   .hero__scroll {
     position: absolute;
     bottom: var(--sp-4);
     left: 50%;
     transform: translateX(-50%);
-    color: var(--muted);
+    color: rgba(255,255,255,0.5);
     font-size: 1.2rem;
     animation: bounce 2s ease-in-out infinite;
   }
@@ -180,8 +237,16 @@
   }
 
   @media (max-width: 960px) {
-    .hero__inner { grid-template-columns: 1fr; }
-    .hero__visual { display: none; }
-    .hero__inner { min-height: auto; padding-top: calc(var(--sp-10) + var(--nav-height)); padding-bottom: var(--sp-8); }
+    .hero__inner { grid-template-columns: 1fr; padding-top: calc(var(--sp-10) + var(--nav-height)); padding-bottom: var(--sp-8); min-height: auto; }
+    .hero__visual { min-height: auto; margin-top: var(--sp-8); }
+    .hero__photo-frame { position: relative; top: auto; right: auto; width: 100%; height: 300px; }
+    .hero__card--secondary { bottom: 90px; left: 12px; }
+    .hero__card--accent { bottom: 20px; right: 12px; }
+  }
+
+  @media (max-width: 480px) {
+    .hero__visual { margin-top: var(--sp-6); }
+    .hero__photo-frame { height: 240px; }
+    .hero__card { padding: var(--sp-2) var(--sp-3); }
   }
 </style>

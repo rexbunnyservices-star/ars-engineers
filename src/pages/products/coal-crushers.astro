@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import SpecTable from '../../components/SpecTable.astro';
 import ProductCard from '../../components/ProductCard.astro';
+import CTA from '../../components/CTA.astro';
 
 const title = 'Coal Crushers | ARSM Engineering & Technology';
 const desc = 'Specialized single-roll coal crushers for coal processing. 20 TPH capacity. Manufactured in New Delhi by ARSM Engineering & Technology.';
@@ -62,29 +63,11 @@ const related = [
         <span class="section__label">Related Products</span>
         <h2 class="section__title">You May Also Need</h2>
       </div>
-      <div style="display:grid; grid-template-columns: repeat(3,1fr); gap: var(--sp-4);">
+      <div class="related-grid">
         {related.map((p) => <ProductCard {...p} />)}
       </div>
     </div>
   </section>
 
-  <section class="cta-band">
-    <div class="container">
-      <div class="cta-band__inner">
-        <div>
-          <h2 class="cta-band__title">Need a Coal Crusher?</h2>
-          <p class="cta-band__text">Tell us your coal type and required output size.</p>
-        </div>
-        <a href="/#contact" class="btn btn--white"><i class="ri-chat-3-line"></i> Get Free Quote</a>
-      </div>
-    </div>
-  </section>
+  <CTA title="Need a Coal Crusher?" text="Tell us your coal type and required output size." />
 </Layout>
-
-<style>
-  .cta-band { background: var(--grad); padding: var(--sp-10) 0; }
-  .cta-band__inner { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-6); flex-wrap: wrap; }
-  .cta-band__title { font-size: var(--fs-h2); font-weight: 800; color: #fff; margin-bottom: var(--sp-1); }
-  .cta-band__text { font-size: var(--fs-body); color: rgba(255,255,255,0.85); }
-  @media (max-width: 720px) { .cta-band__inner { flex-direction: column; text-align: center; } [style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; } }
-</style>

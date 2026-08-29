@@ -29,25 +29,10 @@
             <i class="ri-checkbox-circle-fill"></i>
             <span>Pan-India Client Base</span>
           </div>
-        </div>
-      </div>
-
-      <div class="about__stats">
-        <div class="about__stat-card">
-          <span class="about__stat-num" data-count="10" data-suffix="+">0+</span>
-          <span class="about__stat-label">Years in Business</span>
-        </div>
-        <div class="about__stat-card">
-          <span class="about__stat-num" data-count="30" data-suffix="+">0+</span>
-          <span class="about__stat-label">Product Categories</span>
-        </div>
-        <div class="about__stat-card">
-          <span class="about__stat-num" data-count="100" data-suffix="+">0+</span>
-          <span class="about__stat-label">Happy Clients</span>
-        </div>
-        <div class="about__stat-card">
-          <span class="about__stat-num" data-count="95" data-suffix="%">0%</span>
-          <span class="about__stat-label">Response Rate</span>
+          <div class="about__feature">
+            <i class="ri-checkbox-circle-fill"></i>
+            <span>Founded 2014 · Director: Mr. E.A. Malik</span>
+          </div>
         </div>
       </div>
     </div>
@@ -56,10 +41,8 @@
 
 <style>
   .about__grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: var(--sp-10);
-    align-items: center;
+    max-width: 720px;
+    margin: 0 auto;
   }
 
   .about__text {
@@ -75,8 +58,8 @@
   }
 
   .about__features {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: var(--sp-2);
     margin-top: var(--sp-4);
   }
@@ -95,48 +78,9 @@
     font-size: 1.1rem;
   }
 
-  .about__stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--sp-4);
-  }
-
-  .about__stat-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: var(--sp-5) var(--sp-4);
-    text-align: center;
-    transition: transform var(--duration) var(--ease),
-                box-shadow var(--duration) var(--ease);
-  }
-
-  .about__stat-card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
-  }
-
-  .about__stat-num {
-    display: block;
-    font-size: var(--fs-h1);
-    font-weight: 900;
-    color: var(--accent);
-    line-height: 1;
-    margin-bottom: var(--sp-1);
-  }
-
-  .about__stat-label {
-    font-size: var(--fs-xs);
-    font-weight: 600;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
   @media (max-width: 720px) {
-    .about__grid {
+    .about__features {
       grid-template-columns: 1fr;
-      gap: var(--sp-6);
     }
   }
 </style>

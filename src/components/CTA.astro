@@ -1,12 +1,22 @@
 ---
+interface Props {
+  title?: string;
+  text?: string;
+}
+
+const {
+  title = 'Ready to Upgrade Your Material Handling Setup?',
+  text = "Get a free consultation with our engineering team. We'll help you find the perfect solution for your operations.",
+} = Astro.props;
 ---
+
 <section class="section cta-band">
   <div class="cta-band__pattern"></div>
   <div class="container" data-reveal>
     <div class="cta-band__inner">
       <div class="cta-band__content">
-        <h2 class="cta-band__title">Ready to Upgrade Your Material Handling Setup?</h2>
-        <p class="cta-band__text">Get a free consultation with our engineering team. We'll help you find the perfect solution for your operations.</p>
+        <h2 class="cta-band__title">{title}</h2>
+        <p class="cta-band__text">{text}</p>
       </div>
       <a href="/#contact" class="btn btn--white btn--sm">
         <i class="ri-chat-3-line"></i> Get Free Quote
@@ -14,7 +24,6 @@
     </div>
   </div>
 </section>
-
 <style>
   .cta-band {
     background: var(--grad);

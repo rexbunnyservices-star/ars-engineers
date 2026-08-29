@@ -1,0 +1,74 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SpecTable from '../../components/SpecTable.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import CTA from '../../components/CTA.astro';
+
+const title = 'Coal Hammer Mill | ARSM Engineering & Technology';
+const desc = 'Heavy-duty coal hammer mills for crushing & pulverizing coal into consistent fines. Built to client specifications. Manufactured in New Delhi by ARSM Engineering & Technology.';
+
+const specs = [
+  { label: 'Type', value: 'Heavy-Duty Coal Hammer Mill' },
+  { label: 'Capacity', value: '5 – 90 TPH (varies by model)' },
+  { label: 'Feed Size', value: 'Up to 120 mm – 180 mm' },
+  { label: 'Output Size', value: '0 – 5 mm / 0 – 10 mm (adjustable via grate)' },
+  { label: 'Rotor Speed', value: '800 – 1500 RPM' },
+  { label: 'Motor Power', value: '37 kW – 90 kW' },
+  { label: 'Hammers', value: 'High-Manganese / High-Chrome wear parts' },
+  { label: 'Frame', value: 'Heavy Duty MS with Reinforced Liners' },
+  { label: 'Grate Screen', value: 'Interchangeable grate bars for output control' },
+  { label: 'Drive', value: 'Direct / Diesel engine-driven options' },
+  { label: 'Application', value: 'Coal mines, thermal power plants, coal preparation plants, coke & boiler fuel' },
+  { label: 'Advantage', value: 'High reduction ratio (10:1 to 20:1), low operating cost, built to client specification' },
+];
+
+const related = [
+  { name: 'Coal Crushers', description: 'Specialized single-roll crushers designed for coal processing.', price: 'From ₹1.5 Lakh', icon: 'ri-fire-line', href: '/products/coal-crushers' },
+  { name: 'Hammer Crushers', description: 'High-impact secondary crushers for medium-hard materials.', price: 'Contact for Price', icon: 'ri-hammer-line', href: '/products/hammer-crushers' },
+  { name: 'Grinding Mills', description: 'Vertical roller mills & ball mills for powder grinding applications.', price: 'Contact for Price', icon: 'ri-induction-cooker-line', href: '/products/grinding-mills' },
+];
+---
+
+<Layout title={title} description={desc}>
+  <section class="product-hero">
+    <div class="container">
+      <p class="product-hero__breadcrumb">
+        <a href="/">Home</a> / <a href="/#products">Products</a> / Coal Hammer Mill
+      </p>
+      <h1 class="product-hero__title">Coal Hammer Mill</h1>
+      <p class="product-hero__desc">
+        ARSM Engineering & Technology builds heavy-duty coal hammer mills that crush and pulverize run-of-mine coal into consistent, uniform fines in a single pass. The high-speed rotor with manganese steel hammers strikes the feed against hardened liners and grate bars until the coal reaches the required size and falls through.
+      </p>
+      <p class="product-hero__desc">
+        Widely used in coal mines, thermal power plants, coal preparation plants, and boiler fuel systems, our coal hammer mills deliver a high reduction ratio at low operating cost. Every unit is manufactured to client specifications — capacity, output size, and drive type can all be configured to match your exact requirement.
+      </p>
+      <div class="product-hero__actions">
+        <a href="/#contact" class="btn btn--primary"><i class="ri-chat-3-line"></i> Get a Quote</a>
+        <a href="/#products" class="btn btn--outline">View All Products</a>
+      </div>
+    </div>
+    <div class="product-hero__img">
+      <img src="/images/coal-hammer-mill.jpg" alt="ARSM Coal Hammer Mill for crushing and pulverizing coal" width="600" height="400" loading="eager" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SpecTable specs={specs} />
+    </div>
+  </section>
+
+  <section class="section section--subtle">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__label">Related Products</span>
+        <h2 class="section__title">You May Also Need</h2>
+      </div>
+      <div class="related-grid">
+        {related.map((p) => <ProductCard {...p} />)}
+      </div>
+    </div>
+  </section>
+
+  <CTA title="Need a Coal Hammer Mill?" text="Tell us your coal type, moisture, and required output size — we'll build to your specification." />
+</Layout>
