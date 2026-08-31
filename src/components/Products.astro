@@ -14,7 +14,7 @@ const products = [
     price: 'Contact for Price',
     icon: 'ri-hammer-line',
     href: '/products/coal-hammer-mill',
-    image: '/images/coal-hammer-mill.jpg',
+    image: '/images/coal-hammer-mill.png',
   },
   {
     name: 'Belt Conveyors',
@@ -22,7 +22,7 @@ const products = [
     price: 'From ₹25,000',
     icon: 'ri-arrow-right-line',
     href: '/products/belt-conveyors',
-    image: '/images/belt-conveyor.jpg',
+    image: '/images/belt-conveyor.png',
   },
   {
     name: 'Jaw Crushers',
@@ -46,7 +46,7 @@ const products = [
     price: 'From ₹1 Lakh',
     icon: 'ri-loop-right-line',
     href: '/products/screw-conveyors',
-    image: '/images/screw-conveyor.jpg',
+    image: '/images/screw-conveyor.png',
   },
   {
     name: 'Crushing Plants',
@@ -62,7 +62,7 @@ const products = [
     price: 'Contact for Price',
     icon: 'ri-hammer-line',
     href: '/products/hammer-crushers',
-    image: '/images/hammer-crusher.jpg',
+    image: '/images/hammer-crusher.png',
   },
   {
     name: 'Roll Crushers',
@@ -70,7 +70,7 @@ const products = [
     price: 'Contact for Price',
     icon: 'ri-circle-line',
     href: '/products/roll-crushers',
-    image: '/images/roll-crusher.jpg',
+    image: '/images/roll-crusher.png',
   },
   {
     name: 'Grinding Mills',
@@ -78,7 +78,7 @@ const products = [
     price: 'Contact for Price',
     icon: 'ri-induction-cooker-line',
     href: '/products/grinding-mills',
-    image: '/images/vertical roller grinding mill.png',
+    image: '/images/grinding-mill.png',
   },
   {
     name: 'Sand Washing Plants',
@@ -86,7 +86,7 @@ const products = [
     price: 'Contact for Price',
     icon: 'ri-water-flash-line',
     href: '/products/sand-washing-plants',
-    image: '/images/sand washing machine.png',
+    image: '/images/sand-washing-plant.png',
   },
 ];
 ---
@@ -103,7 +103,7 @@ const products = [
       {products.map((p) => (
         <a href={p.href} class="products__card">
           <div class="products__card-img">
-            <img src={p.image} alt={`ARSM ${p.name}`} loading="lazy" width="400" height="300" />
+            <img src={p.image} alt={`ARSM ${p.name}`} loading="lazy" width="800" height="800" />
           </div>
           <h3 class="products__card-name">{p.name}</h3>
           <p class="products__card-desc">{p.desc}</p>
